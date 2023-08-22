@@ -26,7 +26,7 @@ const Home = ({ searchValue }) => {
                   .map((product) => (
                     <div
                       key={product.productId}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                      className={`w-[25px] h-[25px] mb-2 mt-4 bg-black rounded-lg cursor-pointer ${
                         product.productName === searchValue // Compare with searchValue
                           ? "bg-green-500"
                           : "bg-black"
