@@ -12,14 +12,13 @@ const Home = ({ searchValue }) => {
   return (
     <>
       <div className="bg-[#1E1E1E] w-[100vw] h-[100vh] pt-[0vh] flex flex-row">
-        <div className="relative page-container ">
-          {/* <img src={img} className="w-[33vw] h-[40vh]" /> */}
+        <div className="page-container">
           {Array.from({ length: 4 }, (_, rowIndex) => (
             <div
               key={rowIndex}
-              className={`absolute top-${10 + rowIndex * 10} left-[10vw]`} // Adjusted top positioning
+              className={`top-${10 + rowIndex * 10} left-[10vw]`} // Adjusted top positioning
             >
-              <div className="flex space-x-3 border-b-2">
+              <div className="flex space-x-3 border-b-2 w-[35vw]">
                 {products
                   .filter((product) => product.rowNo === rowIndex + 1)
                   .slice(0, 4) // Only take the first 4 products in each row
