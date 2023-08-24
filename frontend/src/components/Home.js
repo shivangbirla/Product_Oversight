@@ -7,11 +7,14 @@ import { getProducts } from "../api/productRequest";
 
 const Home = ({ searchValue }) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
-  const [mappedProducts, setMappedProducts] = useState([]);
-
   const handleProductHover = (product) => {
     setHoveredProduct(product);
   };
+  const handleProductLeave = () => {
+    setHoveredProduct(null);
+  };
+
+  const [mappedProducts, setMappedProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,25 +45,32 @@ const Home = ({ searchValue }) => {
                 style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
                 className="absolute left-[7vw] flex space-x-20"
               >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 1 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack) // Sort products by column value
-                  .slice(0, 4) // Only take the first 4 products in each row
-                  .map((product) => (
-                    <div
-                      key={product.product_id}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
-                        product.product_name === searchValue
-                          ? "bg-green-500"
-                          : "bg-black"
-                      }`}
-                      onMouseEnter={() => handleProductHover(product)}
-                      onMouseLeave={() => setHoveredProduct(null)}
-                    ></div>
-                  ))}
+                <div className="row">
+                  {mappedProducts
+                    .filter(
+                      (product) =>
+                        product.zone === 1 && product.level === rowIndex + 1
+                    )
+                    .sort((a, b) => a.rack - b.rack)
+                    .reduce((pairs, product, index, array) => {
+                      if (index % 4 === 0) {
+                        pairs.push(array.slice(index, index + 4));
+                      }
+                      return pairs;
+                    }, [])
+                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .map((pair, index) => (
+                      <div
+                        key={index}
+                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                          pair[0].product_name === searchValue ||
+                          pair[1].product_name === searchValue
+                            ? "bg-green-500"
+                            : "bg-black"
+                        }`}
+                      ></div>
+                    ))}
+                </div>
               </div>
             ))}
           </div>
@@ -199,15 +209,22 @@ const Home = ({ searchValue }) => {
         </div>
 
         <div className="">
-          {hoveredProduct && (
-            <div className="fixed top-[40vh] left-[60vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
-              <h2 className="text-lg font-semibold">
-                Product Name: {hoveredProduct.product_name}
-              </h2>
-              <p>Product Details: {hoveredProduct.quantity}</p>
-              <p>Description: {hoveredProduct.description}</p>
-            </div>
-          )}
+          {hoveredProduct &&
+            hoveredProduct.map(
+              (hoveredP, i) =>
+                hoveredP && (
+                  <div
+                    className="fixed top-[40vh] left-[60vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md"
+                    key={i}
+                  >
+                    <h2 className="text-lg font-semibold">
+                      Product Name: {hoveredP.product_name}
+                    </h2>
+                    <p>Product Details: {hoveredP.quantity}</p>
+                    <p>Description: {hoveredP.description}</p>
+                  </div>
+                )
+            )}
         </div>
       </div>
     </>
