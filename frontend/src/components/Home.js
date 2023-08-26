@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import img1 from "../assets/shelf1.png";
-import img2 from "../assets/shelf2.png";
-import img3 from "../assets/shelf3.png";
+import img_1 from "../assets/img_1.png";
+import img_2 from "../assets/img_2.png";
+import img_3 from "../assets/img_3.png";
+import img_4 from "../assets/img_4.png";
+import img_5 from "../assets/img_5.png";
 import { products } from "../data/data";
 import { getProducts } from "../api/productRequest";
 
@@ -30,22 +32,30 @@ const Home = ({ searchValue }) => {
     };
     fetchData();
   }, []);
+
+  const [hoveredPairIndex, setHoveredPairIndex] = useState(null);
   return (
     <>
-      <div className="bg-[#1E1E1E] w-[100vw] h-auto pt-[0vh] flex flex-row">
-        <div className="flex flex-col">
-          {/* Zone 1 */}
-          <div
-            className="mt-[20vh] ml-[5vh] w-[500px] h-[300px] relative bg-cover"
-            style={{ backgroundImage: `url(${img1})` }}
-          >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
-                className="absolute left-[7vw] flex space-x-20"
-              >
-                <div className="row">
+      <div className="bg-[#1E1E1E] w-[100vw] h-auto md:h-[100vh]">
+        <div className="flex flex-col md:flex-row-reverse md:justify-between">
+          <div className="flex flex-col">
+            {/* Zone 1 */}
+            <div
+              className="mt-[42vh] w-[500px] h-[380px] md:w-[220px] md:h-[140px] relative bg-cover"
+              style={{ backgroundImage: `url(${img_1})` }}
+            >
+              {Array.from({ length: 3 }, (_, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  // style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  style={{ top: `${50 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  // style={{
+                  //   top: `${122 + rowIndex * 50}px`,
+                  //   // Apply different top value for md screens using responsive classes
+                  //   md: { top: `${0 + rowIndex * 0}px` }, // Customize as needed
+                  // }}
+                  className="absolute flex flex-row left-[5vw] space-x-10 md:space-x-2"
+                >
                   {mappedProducts
                     .filter(
                       (product) =>
@@ -62,149 +72,356 @@ const Home = ({ searchValue }) => {
                     .map((pair, index) => (
                       <div
                         key={index}
-                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                        className={`product-pair w-[25px] h-[25px] md:w-[15px] md:h-[15px] bg-black rounded-lg cursor-pointer ${
                           pair[0].product_name === searchValue ||
-                          pair[1].product_name === searchValue
+                          pair[1].product_name === searchValue ||
+                          pair[2].product_name === searchValue ||
+                          pair[3].product_name === searchValue
                             ? "bg-green-500"
                             : "bg-black"
                         }`}
-                      ></div>
+                        onMouseEnter={() => setHoveredPairIndex(index)}
+                        onMouseLeave={() => setHoveredPairIndex(null)}
+                      >
+                        {hoveredPairIndex === index && (
+                          <div>
+                            <div className="product-details fixed top-[10vh] left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product: {pair[0].product_name}
+                              </h2>
+                              <p>Product Details: {pair[0].quantity}</p>
+                              <p>Description: {pair[0].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[10vh] left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product: {pair[1].product_name}
+                              </h2>
+                              <p>Product Details: {pair[1].quantity}</p>
+                              <p>Description: {pair[1].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[30vh] left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product: {pair[2].product_name}
+                              </h2>
+                              <p>Product Details: {pair[2].quantity}</p>
+                              <p>Description: {pair[2].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[30vh] left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product: {pair[3].product_name}
+                              </h2>
+                              <p>Product Details: {pair[3].quantity}</p>
+                              <p>Description: {pair[3].description}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ))}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* Zone 2 */}
+            <div
+              className="mt-[10vh] md:mt-[0vh] w-[500px] h-[380px] md:w-[220px] md:h-[140px] relative bg-cover"
+              style={{ backgroundImage: `url(${img_2})` }}
+            >
+              {Array.from({ length: 3 }, (_, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  className="absolute flex flex-row left-[3.5vw] space-x-10"
+                >
+                  {mappedProducts
+                    .filter(
+                      (product) =>
+                        product.zone === 2 && product.level === rowIndex + 1
+                    )
+                    .sort((a, b) => a.rack - b.rack)
+                    .reduce((pairs, product, index, array) => {
+                      if (index % 4 === 0) {
+                        pairs.push(array.slice(index, index + 4));
+                      }
+                      return pairs;
+                    }, [])
+                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .map((pair, index) => (
+                      <div
+                        key={index}
+                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                          pair[0].product_name === searchValue ||
+                          pair[1].product_name === searchValue ||
+                          pair[2].product_name === searchValue ||
+                          pair[3].product_name === searchValue
+                            ? "bg-green-500"
+                            : "bg-black"
+                        }`}
+                        onMouseEnter={() => setHoveredPairIndex(index)}
+                        onMouseLeave={() => setHoveredPairIndex(null)}
+                      >
+                        {hoveredPairIndex === index && (
+                          <div>
+                            <div className="product-details fixed top-[40vh] left-[1vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[0].product_name}
+                              </h2>
+                              <p>Product Details: {pair[0].quantity}</p>
+                              <p>Description: {pair[0].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[30vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[1].product_name}
+                              </h2>
+                              <p>Product Details: {pair[1].quantity}</p>
+                              <p>Description: {pair[1].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[50vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[2].product_name}
+                              </h2>
+                              <p>Product Details: {pair[2].quantity}</p>
+                              <p>Description: {pair[2].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[70vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[3].product_name}
+                              </h2>
+                              <p>Product Details: {pair[3].quantity}</p>
+                              <p>Description: {pair[3].description}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
+            {/* Zone 3 */}
+            <div
+              className="mt-[20vh] md:mt-[0vh] w-[400px] h-[400px] md:w-[140px] md:h-[170px] relative bg-cover"
+              style={{ backgroundImage: `url(${img_3})` }}
+            >
+              {Array.from({ length: 3 }, (_, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  className="absolute flex flex-row left-[3.5vw] space-x-10"
+                >
+                  {mappedProducts
+                    .filter(
+                      (product) =>
+                        product.zone === 3 && product.level === rowIndex + 1
+                    )
+                    .sort((a, b) => a.rack - b.rack)
+                    .reduce((pairs, product, index, array) => {
+                      if (index % 4 === 0) {
+                        pairs.push(array.slice(index, index + 4));
+                      }
+                      return pairs;
+                    }, [])
+                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .map((pair, index) => (
+                      <div
+                        key={index}
+                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                          pair[0].product_name === searchValue ||
+                          pair[1].product_name === searchValue ||
+                          pair[2].product_name === searchValue ||
+                          pair[3].product_name === searchValue
+                            ? "bg-green-500"
+                            : "bg-black"
+                        }`}
+                        onMouseEnter={() => setHoveredPairIndex(index)}
+                        onMouseLeave={() => setHoveredPairIndex(null)}
+                      >
+                        {hoveredPairIndex === index && (
+                          <div>
+                            <div className="product-details fixed top-[40vh] left-[1vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[0].product_name}
+                              </h2>
+                              <p>Product Details: {pair[0].quantity}</p>
+                              <p>Description: {pair[0].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[30vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[1].product_name}
+                              </h2>
+                              <p>Product Details: {pair[1].quantity}</p>
+                              <p>Description: {pair[1].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[50vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[2].product_name}
+                              </h2>
+                              <p>Product Details: {pair[2].quantity}</p>
+                              <p>Description: {pair[2].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[70vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[3].product_name}
+                              </h2>
+                              <p>Product Details: {pair[3].quantity}</p>
+                              <p>Description: {pair[3].description}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
           </div>
-          {/* Zone 2 */}
-          <div
-            className="mt-[10vh] ml-[5vh] w-[500px] h-[300px] relative bg-cover"
-            style={{ backgroundImage: `url(${img1})` }}
-          >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
-                className="absolute left-[7vw] flex space-x-20"
-              >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 2 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack) // Sort products by column value
-                  .slice(0, 4) // Only take the first 4 products in each row
-                  .map((product) => (
-                    <div
-                      key={product.product_id}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
-                        product.product_name === searchValue
-                          ? "bg-green-500"
-                          : "bg-black"
-                      }`}
-                      onMouseEnter={() => handleProductHover(product)}
-                      onMouseLeave={() => setHoveredProduct(null)}
-                    ></div>
-                  ))}
-              </div>
-            ))}
-          </div>
-          {/* Zone 3 */}
-          <div
-            className="mt-[10vh] ml-[5vh] w-[400px] h-[500px] relative bg-cover"
-            style={{ backgroundImage: `url(${img2})` }}
-          >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                style={{ top: `${180 + rowIndex * 60}px` }} // Use inline styles for dynamic positioning
-                className="absolute left-[9vw] flex space-x-20"
-              >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 3 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack) // Sort products by column value
-                  .slice(0, 2) // Only take the first 4 products in each row
-                  .map((product) => (
-                    <div
-                      key={product.product_id}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
-                        product.product_name === searchValue
-                          ? "bg-green-500"
-                          : "bg-black"
-                      }`}
-                      onMouseEnter={() => handleProductHover(product)}
-                      onMouseLeave={() => setHoveredProduct(null)}
-                    ></div>
-                  ))}
-              </div>
-            ))}
-          </div>
-          {/* Zone 4 */}
-          <div
-            className="mt-[10vh] ml-[5vh] w-[400px] h-[500px] relative bg-cover"
-            style={{ backgroundImage: `url(${img2})` }}
-          >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                style={{ top: `${180 + rowIndex * 60}px` }} // Use inline styles for dynamic positioning
-                className="absolute left-[9vw] flex space-x-20"
-              >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 4 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack) // Sort products by column value
-                  .slice(0, 2) // Only take the first 4 products in each row
-                  .map((product) => (
-                    <div
-                      key={product.product_id}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
-                        product.product_name === searchValue
-                          ? "bg-green-500"
-                          : "bg-black"
-                      }`}
-                      onMouseEnter={() => handleProductHover(product)}
-                      onMouseLeave={() => setHoveredProduct(null)}
-                    ></div>
-                  ))}
-              </div>
-            ))}
-          </div>
-          {/* Zone 5 */}
-          <div
-            className="mt-[10vh] ml-[5vh] w-[400px] h-[500px] relative bg-cover"
-            style={{ backgroundImage: `url(${img2})` }}
-          >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                style={{ top: `${180 + rowIndex * 60}px` }} // Use inline styles for dynamic positioning
-                className="absolute left-[9vw] flex space-x-20"
-              >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 5 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack) // Sort products by column value
-                  .slice(0, 2) // Only take the first 4 products in each row
-                  .map((product) => (
-                    <div
-                      key={product.product_id}
-                      className={`w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
-                        product.product_name === searchValue
-                          ? "bg-green-500"
-                          : "bg-black"
-                      }`}
-                      onMouseEnter={() => handleProductHover(product)}
-                      onMouseLeave={() => setHoveredProduct(null)}
-                    ></div>
-                  ))}
-              </div>
-            ))}
+          <div className="flex flex-col">
+            {/* Zone 4 */}
+            <div
+              className="mt-[42vh] w-[400px] h-[400px] md:w-[140px] md:h-[170px] relative bg-cover"
+              style={{ backgroundImage: `url(${img_4})` }}
+            >
+              {Array.from({ length: 3 }, (_, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  className="absolute flex flex-row left-[3.5vw] space-x-10"
+                >
+                  {mappedProducts
+                    .filter(
+                      (product) =>
+                        product.zone === 4 && product.level === rowIndex + 1
+                    )
+                    .sort((a, b) => a.rack - b.rack)
+                    .reduce((pairs, product, index, array) => {
+                      if (index % 4 === 0) {
+                        pairs.push(array.slice(index, index + 4));
+                      }
+                      return pairs;
+                    }, [])
+                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .map((pair, index) => (
+                      <div
+                        key={index}
+                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                          pair[0].product_name === searchValue ||
+                          pair[1].product_name === searchValue ||
+                          pair[2].product_name === searchValue ||
+                          pair[3].product_name === searchValue
+                            ? "bg-green-500"
+                            : "bg-black"
+                        }`}
+                        onMouseEnter={() => setHoveredPairIndex(index)}
+                        onMouseLeave={() => setHoveredPairIndex(null)}
+                      >
+                        {hoveredPairIndex === index && (
+                          <div>
+                            <div className="product-details fixed top-[40vh] left-[1vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[0].product_name}
+                              </h2>
+                              <p>Product Details: {pair[0].quantity}</p>
+                              <p>Description: {pair[0].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[30vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[1].product_name}
+                              </h2>
+                              <p>Product Details: {pair[1].quantity}</p>
+                              <p>Description: {pair[1].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[50vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[2].product_name}
+                              </h2>
+                              <p>Product Details: {pair[2].quantity}</p>
+                              <p>Description: {pair[2].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[70vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[3].product_name}
+                              </h2>
+                              <p>Product Details: {pair[3].quantity}</p>
+                              <p>Description: {pair[3].description}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
+            {/* Zone 5 */}
+            <div
+              className="mt-[20vh] md:mt-[0vh] w-[400px] h-[400px] md:w-[140px] md:h-[170px] relative bg-cover"
+              style={{ backgroundImage: `url(${img_5})` }}
+            >
+              {Array.from({ length: 3 }, (_, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  className="absolute flex flex-row left-[3.5vw] space-x-10"
+                >
+                  {mappedProducts
+                    .filter(
+                      (product) =>
+                        product.zone === 5 && product.level === rowIndex + 1
+                    )
+                    .sort((a, b) => a.rack - b.rack)
+                    .reduce((pairs, product, index, array) => {
+                      if (index % 4 === 0) {
+                        pairs.push(array.slice(index, index + 4));
+                      }
+                      return pairs;
+                    }, [])
+                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .map((pair, index) => (
+                      <div
+                        key={index}
+                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                          pair[0].product_name === searchValue ||
+                          pair[1].product_name === searchValue ||
+                          pair[2].product_name === searchValue ||
+                          pair[3].product_name === searchValue
+                            ? "bg-green-500"
+                            : "bg-black"
+                        }`}
+                        onMouseEnter={() => setHoveredPairIndex(index)}
+                        onMouseLeave={() => setHoveredPairIndex(null)}
+                      >
+                        {hoveredPairIndex === index && (
+                          <div>
+                            <div className="product-details fixed top-[40vh] left-[1vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[0].product_name}
+                              </h2>
+                              <p>Product Details: {pair[0].quantity}</p>
+                              <p>Description: {pair[0].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[30vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[1].product_name}
+                              </h2>
+                              <p>Product Details: {pair[1].quantity}</p>
+                              <p>Description: {pair[1].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[50vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[2].product_name}
+                              </h2>
+                              <p>Product Details: {pair[2].quantity}</p>
+                              <p>Description: {pair[2].description}</p>
+                            </div>
+                            <div className="product-details fixed top-[40vh] left-[70vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                              <h2 className="text-lg font-semibold">
+                                Product Name: {pair[3].product_name}
+                              </h2>
+                              <p>Product Details: {pair[3].quantity}</p>
+                              <p>Description: {pair[3].description}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
