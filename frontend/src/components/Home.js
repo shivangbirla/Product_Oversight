@@ -34,10 +34,11 @@ const Home = ({ searchValue }) => {
   }, []);
 
   const [hoveredPairIndex, setHoveredPairIndex] = useState(null);
+  const [hoverPairIndex, setHoverPairIndex] = useState(null);
   return (
     <>
-      <div className="bg-[#1E1E1E] w-[100vw] h-auto md:h-[100vh]">
-        <div className="flex flex-col md:flex-row-reverse md:justify-between">
+      <div className="bg-[#1E1E1E] w-[100vw] h-auto sm:h-[100vh] md:h-[150vh]">
+        <div className="flex flex-col md:flex-row-reverse justify-between">
           <div className="flex flex-col">
             {/* Zone 1 */}
             <div
@@ -48,13 +49,19 @@ const Home = ({ searchValue }) => {
                 <div
                   key={rowIndex}
                   // style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
-                  style={{ top: `${50 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  // style={{ top: `${50 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
                   // style={{
-                  //   top: `${122 + rowIndex * 50}px`,
+                  // top: `${122 + rowIndex * 50}px`,
                   //   // Apply different top value for md screens using responsive classes
-                  //   md: { top: `${0 + rowIndex * 0}px` }, // Customize as needed
+                  //   md: { top: `${50 + rowIndex * 50}px` }, // Customize as needed
                   // }}
-                  className="absolute flex flex-row left-[5vw] space-x-10 md:space-x-2"
+                  className="absolute flex flex-row md:left-[5vw] left-[3.5vw] space-x-8 md:space-x-2"
+                  style={{
+                    top: `${122 + rowIndex * 50}px`,
+                    "@media (max-width: 767px)": {
+                      top: `${50 + rowIndex * 50}px`, // Customize this value for screens with max-width of 767px
+                    },
+                  }}
                 >
                   {mappedProducts
                     .filter(
@@ -68,45 +75,45 @@ const Home = ({ searchValue }) => {
                       }
                       return pairs;
                     }, [])
-                    .slice(0, 4) // Limit to 4 pairs for 4 divs
+                    .slice(0, 8) // Limit to 8 pairs for 4 divs
                     .map((pair, index) => (
                       <div
                         key={index}
-                        className={`product-pair w-[25px] h-[25px] md:w-[15px] md:h-[15px] bg-black rounded-lg cursor-pointer ${
+                        className={`product-pair w-[25px] h-[25px] md:w-[15px] md:h-[15px] bg-[#373535] rounded-lg cursor-pointer ${
                           pair[0].product_name === searchValue ||
                           pair[1].product_name === searchValue ||
                           pair[2].product_name === searchValue ||
                           pair[3].product_name === searchValue
                             ? "bg-green-500"
-                            : "bg-black"
+                            : "bg-[#373535]"
                         }`}
                         onMouseEnter={() => setHoveredPairIndex(index)}
                         onMouseLeave={() => setHoveredPairIndex(null)}
                       >
                         {hoveredPairIndex === index && (
                           <div>
-                            <div className="product-details fixed top-[10vh] left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[30vh] left-[40vw] md:top-[10vh] md:left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
                                 Product: {pair[0].product_name}
                               </h2>
                               <p>Product Details: {pair[0].quantity}</p>
                               <p>Description: {pair[0].description}</p>
                             </div>
-                            <div className="product-details fixed top-[10vh] left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[30vh] left-[70vw] md:top-[10vh] md:left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
                                 Product: {pair[1].product_name}
                               </h2>
                               <p>Product Details: {pair[1].quantity}</p>
                               <p>Description: {pair[1].description}</p>
                             </div>
-                            <div className="product-details fixed top-[30vh] left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[60vh] left-[40vw] md:top-[30vh] md:left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
                                 Product: {pair[2].product_name}
                               </h2>
                               <p>Product Details: {pair[2].quantity}</p>
                               <p>Description: {pair[2].description}</p>
                             </div>
-                            <div className="product-details fixed top-[30vh] left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[60vh] left-[70vw] md:top-[30vh] md:left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
                                 Product: {pair[3].product_name}
                               </h2>
@@ -280,8 +287,14 @@ const Home = ({ searchValue }) => {
               {Array.from({ length: 3 }, (_, rowIndex) => (
                 <div
                   key={rowIndex}
-                  style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
-                  className="absolute flex flex-row left-[3.5vw] space-x-10"
+                  // style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
+                  style={{
+                    top: `${190 + rowIndex * 70}px`,
+                    "@media (max-width: 767px)": {
+                      top: `${50 + rowIndex * 50}px`, // Customize this value for screens with max-width of 767px
+                    },
+                  }}
+                  className="absolute flex flex-row left-[7vw] md:left-[7vw] space-x-10 md:top-[60px] md:space-x-2"
                 >
                   {mappedProducts
                     .filter(
@@ -299,43 +312,43 @@ const Home = ({ searchValue }) => {
                     .map((pair, index) => (
                       <div
                         key={index}
-                        className={`product-pair w-[25px] h-[25px] bg-black rounded-lg cursor-pointer ${
+                        className={`product-pair w-[25px] h-[25px] md:h-[15px] md:w-[15px] bg-[#373535] rounded-lg cursor-pointer ${
                           pair[0].product_name === searchValue ||
                           pair[1].product_name === searchValue ||
                           pair[2].product_name === searchValue ||
                           pair[3].product_name === searchValue
                             ? "bg-green-500"
-                            : "bg-black"
+                            : "bg-[#373535]"
                         }`}
-                        onMouseEnter={() => setHoveredPairIndex(index)}
-                        onMouseLeave={() => setHoveredPairIndex(null)}
+                        onMouseEnter={() => setHoverPairIndex(index)}
+                        onMouseLeave={() => setHoverPairIndex(null)}
                       >
-                        {hoveredPairIndex === index && (
+                        {hoverPairIndex === index && (
                           <div>
-                            <div className="product-details fixed top-[40vh] left-[1vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[30vh] left-[40vw] md:top-[10vh] md:left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
-                                Product Name: {pair[0].product_name}
+                                Product: {pair[0].product_name}
                               </h2>
                               <p>Product Details: {pair[0].quantity}</p>
                               <p>Description: {pair[0].description}</p>
                             </div>
-                            <div className="product-details fixed top-[40vh] left-[30vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[30vh] left-[70vw] md:top-[10vh] md:left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
-                                Product Name: {pair[1].product_name}
+                                Product: {pair[1].product_name}
                               </h2>
                               <p>Product Details: {pair[1].quantity}</p>
                               <p>Description: {pair[1].description}</p>
                             </div>
-                            <div className="product-details fixed top-[40vh] left-[50vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[60vh] left-[40vw] md:top-[30vh] md:left-[0vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
-                                Product Name: {pair[2].product_name}
+                                Product: {pair[2].product_name}
                               </h2>
                               <p>Product Details: {pair[2].quantity}</p>
                               <p>Description: {pair[2].description}</p>
                             </div>
-                            <div className="product-details fixed top-[40vh] left-[70vw] transform-translate-[-50% -50%] bg-[#3B3835] p-4 rounded-md shadow-md">
+                            <div className="product-details fixed top-[60vh] left-[70vw] md:top-[30vh] md:left-[50vw] md:w-[180px] bg-[#3B3835] p-4 rounded-md shadow-md">
                               <h2 className="text-lg font-semibold">
-                                Product Name: {pair[3].product_name}
+                                Product: {pair[3].product_name}
                               </h2>
                               <p>Product Details: {pair[3].quantity}</p>
                               <p>Description: {pair[3].description}</p>
