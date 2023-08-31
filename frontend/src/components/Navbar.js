@@ -55,27 +55,27 @@ const Navbar = ({ setSearchValue }) => {
       <header
         className={
           !navState
-            ? "absolute top-7 left-0 right-0 opacity-100 z-50 pb-3 border-b-2 xsm:absolute xsm:top-2.5 xsm:left-0 xsm:pb-1 md:top-5 md:pb-2"
-            : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-[200] blur-effect-theme xsm:h-[8.2vh]"
+            ? "absolute top-0 left-0 right-0 pt-2 pb-0 md:pt-1 bg-[#463f3a] opacity-100 z-50 border-b-2 xsm:absolute xsm:left-0 xsm:pb-1 md:pb-2"
+            : "fixed top-0 left-0 right-0 h-[7vh] flex items-center justify-center opacity-100 z-[200] blur-effect-theme xsm:h-[8.2vh]"
         }
       >
-        <nav className="flex items-center justify-between page-container">
+        <nav className="flex items-center justify-around page-container">
           <div className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer">
             <GrRefresh />
           </div>
-          <div className="w-[300px] flex flex-col xsm:w-[200px]">
-            <label className="flex flex-row">
-              <AiOutlineSearch className="bg-[#f5f5f5] h-[40px] w-[25px] rounded-tl-2xl rounded-bl-2xl cursor-pointer" />
+          <div className="w-[360px] flex flex-col items-center justify-center xsm:w-[200px]">
+            <label className="flex flex-row mt-2">
+              <AiOutlineSearch className="bg-[#f5f5f5] h-[40px] w-[27px] rounded-tl-2xl rounded-bl-2xl cursor-pointer" />
               <input
                 type="text"
                 name="name"
-                className="outline-none bg-[#f5f5f5] h-[40px] w-[220px] rounded-tr-2xl rounded-br-2xl cursor-pointer xsm:w-[150px]"
+                className="outline-none bg-[#f5f5f5] h-[40px] w-[280px] rounded-tr-2xl rounded-br-2xl cursor-pointer xsm:w-[150px]"
                 value={value}
                 onChange={onChange}
                 autoComplete="off"
               />
             </label>
-            <div className="flex flex-col opacity-100 z-[200] blur-effect-theme rounded-2xl mt-2 w-[245px]">
+            <div className="flex flex-col opacity-100 z-[200] blur-effect-theme rounded-2xl mt-2 mb-1.5 w-[308px]">
               {mappedProducts
                 .filter((item) => {
                   const searchTerm = value.toLowerCase();
