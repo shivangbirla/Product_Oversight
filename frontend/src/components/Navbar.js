@@ -60,7 +60,10 @@ const Navbar = ({ setSearchValue }) => {
         }
       >
         <nav className="flex items-center justify-around page-container">
-          <div className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer">
+          <div
+            className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer"
+            onClick={() => window.location.reload()}
+          >
             <GrRefresh />
           </div>
           <div className="w-[360px] flex flex-col items-center justify-center xsm:w-[200px]">
@@ -73,6 +76,11 @@ const Navbar = ({ setSearchValue }) => {
                 value={value}
                 onChange={onChange}
                 autoComplete="off"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    onSearch(value);
+                  }
+                }}
               />
             </label>
             <div className="flex flex-col opacity-100 z-[200] blur-effect-theme rounded-2xl mt-2 mb-1.5 w-[308px]">

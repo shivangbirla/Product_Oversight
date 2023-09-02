@@ -19,4 +19,32 @@
   .blur-effect-theme {
     @apply bg-[#ede0d4]/20 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-50 opacity-100 z-[100] shadow-sm shadow-slate-100 transition-all duration-300;
   }
+
+  /* Width and height for the scrollbar track and thumb */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Styles for the scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4); /* Color of the thumb */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  /* Styles for the scrollbar track (the background) */
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Color of the track */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  /* Optional: Hover styles for the thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  /* Optional: Active styles for the thumb (when clicked) */
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
