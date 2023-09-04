@@ -1537,6 +1537,22 @@ const Home = ({ searchValue }) => {
 
   console.log(searchValue);
 
+  // const arr0 = [
+  //   { MACH_DESC: "Apple" },
+  //   { MACH_DESC: "Banana" },
+  //   { MACH_DESC: "Cherry" },
+  // ];
+
+  // const value = "Banana";
+
+  // const backgroundColor = arr0.some((product) => product.MACH_DESC === value)
+  //   ? "bg-green-500"
+  //   : "bg-[#373535]";
+
+  // console.log("Background color:", backgroundColor);
+
+  // console.log(arr1);
+
   return (
     <>
       <div className="bg-[#1E1E1E] w-[100vw] h-[100vh]">
@@ -6193,8 +6209,8 @@ const Home = ({ searchValue }) => {
               } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
                 arr1.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
-                  : "bg-[#373535]"
-              }}`}
+                  : "bg-[#828282]"
+              }`}
               onClick={toggleDiv1Visibility}
             ></div>
             {isDiv1Visible && (
