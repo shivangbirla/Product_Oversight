@@ -16,22 +16,22 @@ const Home = ({ searchValue }) => {
     setHoveredProduct(null);
   };
 
-  // const [mappedProducts, setMappedProducts] = useState([]);
+  const [mappedProducts, setMappedProducts] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await getProducts();
-  //       const data = response.data;
-  //       console.log(data);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getProducts();
+        const data = response.data;
+        console.log(data);
 
-  //       setMappedProducts(data.products);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+        setMappedProducts(data.products);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const [hovered1PairIndex, setHovered1PairIndex] = useState(null);
   const [hovered2PairIndex, setHovered2PairIndex] = useState(null);
@@ -43,55 +43,55 @@ const Home = ({ searchValue }) => {
   //   .filter((product) => product.zone === 1 && product.level === 2)
   //   .map((product) => ({ ...product, selected: true }));
 
-  const mappedProducts = [
-    {
-      Location: "ZONE7-32-1",
-      Box: "G-224",
-      RFID: [
-        {
-          EPC: "301A8D1BE25D0AC001CF4DFB",
-          COMPANY: "BWS",
-          PRODUCT: "9008171",
-          SERIALNO: "30363131",
-          MACH_DESC: "Main air compressor",
-          MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
-          MATERIAL: "VS.CAS.9013780",
-          MATERIAL_DESC: "SLIP RING",
-          PART_NO: "A406300124",
-          ROB: 6,
-        },
-        {
-          EPC: "301A94B9E264118001CF4E6A",
-          COMPANY: "CAS",
-          PRODUCT: "9015366",
-          SERIALNO: "30363242",
-          MACH_DESC: "Main air compressor",
-          MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
-          MATERIAL: "VS.CAS.9013780",
-          MATERIAL_DESC: "SLIP RING",
-          PART_NO: "A406300124",
-          ROB: 6,
-        },
-        {
-          EPC: "301AB363E26EC2C001CF2CD1",
-          COMPANY: "FOS",
-          PRODUCT: "9026315",
-          SERIALNO: "30354641",
-          MACH_DESC: "Main air compressor",
-          MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
-          MATERIAL: "VS.CAS.9013780",
-          MATERIAL_DESC: "SLIP RING",
-          PART_NO: "A406300124",
-          ROB: 6,
-        },
-      ],
-    },
-  ];
+  // const mappedProducts = [
+  //   {
+  //     Location: "ZONE7-32-1",
+  //     Box: "B-01",
+  //     RFID: [
+  //       {
+  //         EPC: "301A8D1BE25D0AC001CF4DFB",
+  //         COMPANY: "BWS",
+  //         PRODUCT: "9008171",
+  //         SERIALNO: "30363131",
+  //         MACH_DESC: "Main air compressor",
+  //         MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
+  //         MATERIAL: "VS.CAS.9013780",
+  //         MATERIAL_DESC: "SLIP RING",
+  //         PART_NO: "A406300124",
+  //         ROB: 6,
+  //       },
+  //       {
+  //         EPC: "301A94B9E264118001CF4E6A",
+  //         COMPANY: "CAS",
+  //         PRODUCT: "9015366",
+  //         SERIALNO: "30363242",
+  //         MACH_DESC: "Main air compressor",
+  //         MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
+  //         MATERIAL: "VS.CAS.9013780",
+  //         MATERIAL_DESC: "SLIP RING",
+  //         PART_NO: "A406300124",
+  //         ROB: 6,
+  //       },
+  //       {
+  //         EPC: "301AB363E26EC2C001CF2CD1",
+  //         COMPANY: "FOS",
+  //         PRODUCT: "9026315",
+  //         SERIALNO: "30354641",
+  //         MACH_DESC: "Main air compressor",
+  //         MAKER_DESC: "DONGHWA PNEUTEC CO.LTD",
+  //         MATERIAL: "VS.CAS.9013780",
+  //         MATERIAL_DESC: "SLIP RING",
+  //         PART_NO: "A406300124",
+  //         ROB: 6,
+  //       },
+  //     ],
+  //   },
+  // ];
 
   const newArray = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "ZONE7-32-1" && product.Box === "B-01") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           newArray.push({ ...rfidItem });
@@ -112,7 +112,7 @@ const Home = ({ searchValue }) => {
   const arr1 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-01" && product.Box === "B-01") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr1.push({ ...rfidItem });
@@ -120,8 +120,6 @@ const Home = ({ searchValue }) => {
       }
     }
   });
-
-  // console.log(arr1);
 
   const [isDiv1Visible, setIsDiv1Visible] = useState(false);
 
@@ -132,7 +130,7 @@ const Home = ({ searchValue }) => {
   const arr2 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-02" && product.Box === "B-02") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr2.push({ ...rfidItem });
@@ -151,7 +149,7 @@ const Home = ({ searchValue }) => {
   const arr3 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-03" && product.Box === "B-03") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr3.push({ ...rfidItem });
@@ -170,7 +168,7 @@ const Home = ({ searchValue }) => {
   const arr4 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-04" && product.Box === "B-04") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr4.push({ ...rfidItem });
@@ -190,7 +188,7 @@ const Home = ({ searchValue }) => {
   const arr5 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-05" && product.Box === "B-05") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr5.push({ ...rfidItem });
@@ -210,7 +208,7 @@ const Home = ({ searchValue }) => {
   const arr6 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-1-06" && product.Box === "B-06") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr6.push({ ...rfidItem });
@@ -229,7 +227,7 @@ const Home = ({ searchValue }) => {
   const arr7 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-2-07" && product.Box === "B-07") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr7.push({ ...rfidItem });
@@ -247,7 +245,7 @@ const Home = ({ searchValue }) => {
   const arr8 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-2-08" && product.Box === "B-08") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr8.push({ ...rfidItem });
@@ -265,7 +263,7 @@ const Home = ({ searchValue }) => {
   const arr9 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-2-09" && product.Box === "B-09") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr9.push({ ...rfidItem });
@@ -284,7 +282,7 @@ const Home = ({ searchValue }) => {
   const arr10 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-2-10" && product.Box === "B-10") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr10.push({ ...rfidItem });
@@ -303,7 +301,7 @@ const Home = ({ searchValue }) => {
   const arr11 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone2-3-11" && product.Box === "B-11") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr11.push({ ...rfidItem });
@@ -324,7 +322,7 @@ const Home = ({ searchValue }) => {
   const arr12 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-12" && product.Box === "B-12") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr12.push({ ...rfidItem });
@@ -344,7 +342,7 @@ const Home = ({ searchValue }) => {
   const arr13 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-13" && product.Box === "B-13") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr13.push({ ...rfidItem });
@@ -364,7 +362,7 @@ const Home = ({ searchValue }) => {
   const arr14 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-14" && product.Box === "B-14") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr14.push({ ...rfidItem });
@@ -384,7 +382,7 @@ const Home = ({ searchValue }) => {
   const arr15 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-15" && product.Box === "B-15") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr15.push({ ...rfidItem });
@@ -404,7 +402,7 @@ const Home = ({ searchValue }) => {
   const arr16 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-16" && product.Box === "B-16") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr16.push({ ...rfidItem });
@@ -424,7 +422,7 @@ const Home = ({ searchValue }) => {
   const arr17 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-17" && product.Box === "B-17") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr17.push({ ...rfidItem });
@@ -444,7 +442,7 @@ const Home = ({ searchValue }) => {
   const arr18 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-18" && product.Box === "B-18") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr18.push({ ...rfidItem });
@@ -464,7 +462,7 @@ const Home = ({ searchValue }) => {
   const arr19 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-19" && product.Box === "B-19") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr19.push({ ...rfidItem });
@@ -484,7 +482,7 @@ const Home = ({ searchValue }) => {
   const arr20 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-1-20" && product.Box === "B-20") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr20.push({ ...rfidItem });
@@ -504,7 +502,7 @@ const Home = ({ searchValue }) => {
   const arr21 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-21" && product.Box === "B-21") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr21.push({ ...rfidItem });
@@ -524,7 +522,7 @@ const Home = ({ searchValue }) => {
   const arr22 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-22" && product.Box === "B-22") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr22.push({ ...rfidItem });
@@ -544,7 +542,7 @@ const Home = ({ searchValue }) => {
   const arr23 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-23" && product.Box === "B-23") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr23.push({ ...rfidItem });
@@ -564,7 +562,7 @@ const Home = ({ searchValue }) => {
   const arr24 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-24" && product.Box === "B-24") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr24.push({ ...rfidItem });
@@ -584,7 +582,7 @@ const Home = ({ searchValue }) => {
   const arr25 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-25" && product.Box === "B-25") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr25.push({ ...rfidItem });
@@ -604,7 +602,7 @@ const Home = ({ searchValue }) => {
   const arr26 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-26" && product.Box === "B-26") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr26.push({ ...rfidItem });
@@ -624,7 +622,7 @@ const Home = ({ searchValue }) => {
   const arr27 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-2-27" && product.Box === "B-27") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr27.push({ ...rfidItem });
@@ -644,7 +642,7 @@ const Home = ({ searchValue }) => {
   const arr28 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-3-28" && product.Box === "B-28") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr28.push({ ...rfidItem });
@@ -664,7 +662,7 @@ const Home = ({ searchValue }) => {
   const arr29 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone3-3-29" && product.Box === "B-29") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr29.push({ ...rfidItem });
@@ -686,7 +684,7 @@ const Home = ({ searchValue }) => {
   const arr30 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-30" && product.Box === "B-30") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr30.push({ ...rfidItem });
@@ -706,7 +704,7 @@ const Home = ({ searchValue }) => {
   const arr31 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-31" && product.Box === "B-31") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr31.push({ ...rfidItem });
@@ -726,7 +724,7 @@ const Home = ({ searchValue }) => {
   const arr32 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-32" && product.Box === "B-32") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr32.push({ ...rfidItem });
@@ -746,7 +744,7 @@ const Home = ({ searchValue }) => {
   const arr33 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-33" && product.Box === "B-33") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr33.push({ ...rfidItem });
@@ -766,7 +764,7 @@ const Home = ({ searchValue }) => {
   const arr34 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-34" && product.Box === "B-34") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr34.push({ ...rfidItem });
@@ -786,7 +784,7 @@ const Home = ({ searchValue }) => {
   const arr35 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-35" && product.Box === "B-35") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr35.push({ ...rfidItem });
@@ -806,7 +804,7 @@ const Home = ({ searchValue }) => {
   const arr36 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-36" && product.Box === "B-36") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr36.push({ ...rfidItem });
@@ -826,7 +824,7 @@ const Home = ({ searchValue }) => {
   const arr37 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-1-37" && product.Box === "B-37") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr37.push({ ...rfidItem });
@@ -846,7 +844,7 @@ const Home = ({ searchValue }) => {
   const arr38 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-2-38" && product.Box === "B-38") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr38.push({ ...rfidItem });
@@ -866,7 +864,7 @@ const Home = ({ searchValue }) => {
   const arr39 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-2-39" && product.Box === "B-39") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr39.push({ ...rfidItem });
@@ -886,7 +884,7 @@ const Home = ({ searchValue }) => {
   const arr40 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-2-40" && product.Box === "B-40") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr40.push({ ...rfidItem });
@@ -906,7 +904,7 @@ const Home = ({ searchValue }) => {
   const arr41 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-2-41" && product.Box === "B-41") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr41.push({ ...rfidItem });
@@ -926,7 +924,7 @@ const Home = ({ searchValue }) => {
   const arr42 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-3-42" && product.Box === "B-42") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr42.push({ ...rfidItem });
@@ -946,7 +944,7 @@ const Home = ({ searchValue }) => {
   const arr43 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-3-43" && product.Box === "B-43") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr43.push({ ...rfidItem });
@@ -966,7 +964,7 @@ const Home = ({ searchValue }) => {
   const arr44 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-3-44" && product.Box === "B-44") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr44.push({ ...rfidItem });
@@ -986,7 +984,7 @@ const Home = ({ searchValue }) => {
   const arr45 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone4-3-45" && product.Box === "B-45") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr45.push({ ...rfidItem });
@@ -1008,7 +1006,7 @@ const Home = ({ searchValue }) => {
   const arr46 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-46" && product.Box === "B-46") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr46.push({ ...rfidItem });
@@ -1027,7 +1025,7 @@ const Home = ({ searchValue }) => {
   const arr47 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-47" && product.Box === "B-47") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr47.push({ ...rfidItem });
@@ -1046,7 +1044,7 @@ const Home = ({ searchValue }) => {
   const arr48 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-48" && product.Box === "B-48") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr48.push({ ...rfidItem });
@@ -1065,7 +1063,7 @@ const Home = ({ searchValue }) => {
   const arr49 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-49" && product.Box === "B-49") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr49.push({ ...rfidItem });
@@ -1084,7 +1082,7 @@ const Home = ({ searchValue }) => {
   const arr50 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-50" && product.Box === "B-50") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr50.push({ ...rfidItem });
@@ -1103,7 +1101,7 @@ const Home = ({ searchValue }) => {
   const arr51 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-51" && product.Box === "B-51") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr51.push({ ...rfidItem });
@@ -1122,7 +1120,7 @@ const Home = ({ searchValue }) => {
   const arr52 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-52" && product.Box === "B-52") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr52.push({ ...rfidItem });
@@ -1141,7 +1139,7 @@ const Home = ({ searchValue }) => {
   const arr53 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-53" && product.Box === "B-53") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr53.push({ ...rfidItem });
@@ -1160,7 +1158,7 @@ const Home = ({ searchValue }) => {
   const arr54 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-1-54" && product.Box === "B-54") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr54.push({ ...rfidItem });
@@ -1179,7 +1177,7 @@ const Home = ({ searchValue }) => {
   const arr55 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-55" && product.Box === "B-55") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr55.push({ ...rfidItem });
@@ -1198,7 +1196,7 @@ const Home = ({ searchValue }) => {
   const arr56 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-56" && product.Box === "B-56") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr56.push({ ...rfidItem });
@@ -1217,7 +1215,7 @@ const Home = ({ searchValue }) => {
   const arr57 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-57" && product.Box === "B-57") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr57.push({ ...rfidItem });
@@ -1236,7 +1234,7 @@ const Home = ({ searchValue }) => {
   const arr58 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-58" && product.Box === "B-58") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr58.push({ ...rfidItem });
@@ -1255,7 +1253,7 @@ const Home = ({ searchValue }) => {
   const arr59 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-59" && product.Box === "B-59") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr59.push({ ...rfidItem });
@@ -1274,7 +1272,7 @@ const Home = ({ searchValue }) => {
   const arr60 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-60" && product.Box === "B-60") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr60.push({ ...rfidItem });
@@ -1293,7 +1291,7 @@ const Home = ({ searchValue }) => {
   const arr61 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-61" && product.Box === "B-61") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr61.push({ ...rfidItem });
@@ -1312,7 +1310,7 @@ const Home = ({ searchValue }) => {
   const arr62 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-62" && product.Box === "B-62") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr62.push({ ...rfidItem });
@@ -1331,7 +1329,7 @@ const Home = ({ searchValue }) => {
   const arr63 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-2-63" && product.Box === "B-63") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr63.push({ ...rfidItem });
@@ -1350,7 +1348,7 @@ const Home = ({ searchValue }) => {
   const arr64 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-64" && product.Box === "B-64") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr64.push({ ...rfidItem });
@@ -1369,7 +1367,7 @@ const Home = ({ searchValue }) => {
   const arr65 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-65" && product.Box === "B-65") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr65.push({ ...rfidItem });
@@ -1388,7 +1386,7 @@ const Home = ({ searchValue }) => {
   const arr66 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-66" && product.Box === "B-66") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr66.push({ ...rfidItem });
@@ -1407,7 +1405,7 @@ const Home = ({ searchValue }) => {
   const arr67 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-67" && product.Box === "B-67") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr67.push({ ...rfidItem });
@@ -1426,7 +1424,7 @@ const Home = ({ searchValue }) => {
   const arr68 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-68" && product.Box === "B-68") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr68.push({ ...rfidItem });
@@ -1445,7 +1443,7 @@ const Home = ({ searchValue }) => {
   const arr69 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-69" && product.Box === "B-69") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr69.push({ ...rfidItem });
@@ -1464,7 +1462,7 @@ const Home = ({ searchValue }) => {
   const arr70 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-70" && product.Box === "B-70") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr70.push({ ...rfidItem });
@@ -1483,7 +1481,7 @@ const Home = ({ searchValue }) => {
   const arr71 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "ZONE7-32-1" && product.Box === "G-224") {
+    if (product.Location === "Zone5-3-71" && product.Box === "B-71") {
       if (Array.isArray(product.RFID)) {
         product.RFID.forEach((rfidItem) => {
           arr71.push({ ...rfidItem });
@@ -1499,6 +1497,45 @@ const Home = ({ searchValue }) => {
   const toggleDiv71Visibility = () => {
     setIsDiv71Visible(!isDiv71Visible);
   };
+
+  // Zone 1
+  const [isDiv72Visible, setIsDiv72Visible] = useState(false);
+
+  const toggleDiv72Visibility = () => {
+    setIsDiv72Visible(!isDiv72Visible);
+  };
+  const [isDiv73Visible, setIsDiv73Visible] = useState(false);
+
+  const toggleDiv73Visibility = () => {
+    setIsDiv73Visible(!isDiv73Visible);
+  };
+  const [isDiv74Visible, setIsDiv74Visible] = useState(false);
+
+  const toggleDiv74Visibility = () => {
+    setIsDiv74Visible(!isDiv74Visible);
+  };
+  const [isDiv75Visible, setIsDiv75Visible] = useState(false);
+
+  const toggleDiv75Visibility = () => {
+    setIsDiv75Visible(!isDiv75Visible);
+  };
+  const [isDiv76Visible, setIsDiv76Visible] = useState(false);
+
+  const toggleDiv76Visibility = () => {
+    setIsDiv76Visible(!isDiv76Visible);
+  };
+  const [isDiv77Visible, setIsDiv77Visible] = useState(false);
+
+  const toggleDiv77Visibility = () => {
+    setIsDiv77Visible(!isDiv77Visible);
+  };
+  const [isDiv78Visible, setIsDiv78Visible] = useState(false);
+
+  const toggleDiv78Visibility = () => {
+    setIsDiv78Visible(!isDiv78Visible);
+  };
+
+  console.log(searchValue);
 
   return (
     <>
@@ -1538,10 +1575,10 @@ const Home = ({ searchValue }) => {
                     <div
                       key={index}
                       className={`product-pair md:h-[15px] md:w-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].product_name === searchValue ||
-                        pair[1].product_name === searchValue ||
-                        pair[2].product_name === searchValue ||
-                        pair[3].product_name === searchValue
+                        pair[0].MACH_DESC === searchValue ||
+                        pair[1].MACH_DESC === searchValue ||
+                        pair[2].MACH_DESC === searchValue ||
+                        pair[3].MACH_DESC === searchValue
                           ? "bg-green-500"
                           : "bg-[#373535]"
                       }`}
@@ -1552,7 +1589,7 @@ const Home = ({ searchValue }) => {
                         <div>
                           <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].product_name}
+                              Product: {pair[0].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[0].quantity}
@@ -1563,7 +1600,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].product_name}
+                              Product: {pair[1].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[1].quantity}
@@ -1574,7 +1611,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].product_name}
+                              Product: {pair[2].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[2].quantity}
@@ -1585,7 +1622,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].product_name}
+                              Product: {pair[3].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[3].quantity}
@@ -1600,18 +1637,19 @@ const Home = ({ searchValue }) => {
                   ))}
               </div>
             ))} */}
+
             <div
               className={`${
                 arr12.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr12.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr12.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv12Visibility}
             ></div>
             {isDiv12Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -1670,15 +1708,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr13.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr13.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr13.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv13Visibility}
             ></div>
             {isDiv13Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -1737,15 +1775,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr14.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[7vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr14.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr14.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv14Visibility}
             ></div>
             {isDiv14Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -1804,15 +1842,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr15.length >= 1 ? "visible" : "hidden"
-              } absolute top-[11.5vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr15.some((product) => product.product_name === searchValue)
+              } absolute top-[11.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr15.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv15Visibility}
             ></div>
             {isDiv15Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -1871,15 +1909,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr16.length >= 1 ? "visible" : "hidden"
-              } absolute top-[11.5vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr16.some((product) => product.product_name === searchValue)
+              } absolute top-[11.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr16.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv16Visibility}
             ></div>
             {isDiv16Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -1938,15 +1976,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr17.length >= 1 ? "visible" : "hidden"
-              } absolute top-[11.5vh] left-[14vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr17.some((product) => product.product_name === searchValue)
+              } absolute top-[11.5vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr17.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv17Visibility}
             ></div>
             {isDiv17Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2005,15 +2043,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr18.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr18.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr18.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv18Visibility}
             ></div>
             {isDiv18Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2072,15 +2110,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr19.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr19.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr19.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv19Visibility}
             ></div>
             {isDiv19Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2139,15 +2177,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr20.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[14vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr20.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr20.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv20Visibility}
             ></div>
             {isDiv20Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2206,15 +2244,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr21.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr21.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr21.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv21Visibility}
             ></div>
             {isDiv21Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2273,15 +2311,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr22.length >= 1 ? "visible" : "hidden"
-              } absolute top-[18vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr22.some((product) => product.product_name === searchValue)
+              } absolute top-[18vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr22.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv22Visibility}
             ></div>
             {isDiv22Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2340,15 +2378,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr23.length >= 1 ? "visible" : "hidden"
-              } absolute top-[18vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr23.some((product) => product.product_name === searchValue)
+              } absolute top-[18vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr23.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv23Visibility}
             ></div>
             {isDiv23Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2407,15 +2445,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr24.length >= 1 ? "visible" : "hidden"
-              } absolute top-[18vh] left-[14vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr24.some((product) => product.product_name === searchValue)
+              } absolute top-[18vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr24.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv24Visibility}
             ></div>
             {isDiv24Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2474,15 +2512,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr25.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr25.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr25.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv25Visibility}
             ></div>
             {isDiv25Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2541,15 +2579,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr26.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr26.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr26.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv26Visibility}
             ></div>
             {isDiv26Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2608,15 +2646,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr27.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[14vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr27.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr27.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv27Visibility}
             ></div>
             {isDiv27Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2675,15 +2713,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr28.length >= 1 ? "visible" : "hidden"
-              } absolute top-[26vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr28.some((product) => product.product_name === searchValue)
+              } absolute top-[26vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr28.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv28Visibility}
             ></div>
             {isDiv28Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2742,15 +2780,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr29.length >= 1 ? "visible" : "hidden"
-              } absolute top-[26vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr29.some((product) => product.product_name === searchValue)
+              } absolute top-[26vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr29.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv29Visibility}
             ></div>
             {isDiv29Visible && (
-              <div className="absolute left-[20vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[10vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -2810,9 +2848,9 @@ const Home = ({ searchValue }) => {
         </div>
 
         {/* Zone 4 */}
-        <div className="absolute top-[14vh] left-[1vw]">
+        <div className="absolute top-[37vh] left-[1vw]">
           <div
-            className="mt-[23vh] md:mt-[42vh] w-[350px] h-[250px] md:w-[220px] md:h-[140px] bg-cover"
+            className="w-[350px] h-[250px] bg-cover"
             style={{ backgroundImage: `url(${img_4})` }}
           >
             {/* {Array.from({ length: 3 }, (_, rowIndex) => (
@@ -2843,10 +2881,10 @@ const Home = ({ searchValue }) => {
                     <div
                       key={index}
                       className={`product-pair w-[20px] h-[20px] md:w-[15px] md:h-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].product_name === searchValue ||
-                        pair[1].product_name === searchValue ||
-                        pair[2].product_name === searchValue ||
-                        pair[3].product_name === searchValue
+                        pair[0].MACH_DESC === searchValue ||
+                        pair[1].MACH_DESC === searchValue ||
+                        pair[2].MACH_DESC === searchValue ||
+                        pair[3].MACH_DESC === searchValue
                           ? "bg-green-500"
                           : "bg-[#373535]"
                       }`}
@@ -2857,7 +2895,7 @@ const Home = ({ searchValue }) => {
                         <div>
                           <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].product_name}
+                              Product: {pair[0].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[0].quantity}
@@ -2868,7 +2906,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].product_name}
+                              Product: {pair[1].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[1].quantity}
@@ -2879,7 +2917,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].product_name}
+                              Product: {pair[2].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[2].quantity}
@@ -2890,7 +2928,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].product_name}
+                              Product: {pair[3].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[3].quantity}
@@ -2908,8 +2946,8 @@ const Home = ({ searchValue }) => {
             {/* <div
               className={`${
                 newArray.length >= 1 ? "visible" : "hidden"
-              } absolute top-[40.5vh] left-[4vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                newArray.some((product) => product.product_name === searchValue)
+              } absolute top-[40.5vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                newArray.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2946,7 +2984,7 @@ const Home = ({ searchValue }) => {
                         }
                       >
                         <td className="px-4 py-2 whitespace-nowrap text-[#F5F5F5]">
-                          {product.product_name}
+                          {product.MACH_DESC}
                         </td>
                         <td className="px-4 py-2 whitespace-nowrap text-[#F5F5F5]">
                           {product.product_id}
@@ -2970,15 +3008,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr30.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr30.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr30.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv30Visibility}
             ></div>
             {isDiv30Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3037,15 +3075,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr31.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[5.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr31.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[5.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr31.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv31Visibility}
             ></div>
             {isDiv31Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3104,15 +3142,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr32.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[8.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr32.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[8.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr32.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv32Visibility}
             ></div>
             {isDiv32Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3171,15 +3209,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr33.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[10.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr33.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr33.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv33Visibility}
             ></div>
             {isDiv33Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3238,15 +3276,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr34.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[12.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr34.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[12.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr34.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv34Visibility}
             ></div>
             {isDiv34Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3305,15 +3343,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr35.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr35.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr35.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv35Visibility}
             ></div>
             {isDiv35Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3372,15 +3410,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr36.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr36.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr36.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv36Visibility}
             ></div>
             {isDiv36Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3439,15 +3477,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr37.length >= 1 ? "visible" : "hidden"
-              } absolute top-[35.5vh] left-[22vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr37.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[22vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr37.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv37Visibility}
             ></div>
             {isDiv37Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3506,15 +3544,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr38.length >= 1 ? "visible" : "hidden"
-              } absolute top-[40.5vh] left-[4vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr38.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr38.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv38Visibility}
             ></div>
             {isDiv38Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3573,15 +3611,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr39.length >= 1 ? "visible" : "hidden"
-              } absolute top-[40.5vh] left-[10.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr39.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr39.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv39Visibility}
             ></div>
             {isDiv39Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3640,15 +3678,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr40.length >= 1 ? "visible" : "hidden"
-              } absolute top-[40.5vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr40.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr40.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv40Visibility}
             ></div>
             {isDiv40Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3707,15 +3745,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr41.length >= 1 ? "visible" : "hidden"
-              } absolute top-[40.5vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr41.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr41.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv41Visibility}
             ></div>
             {isDiv41Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3774,15 +3812,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr42.length >= 1 ? "visible" : "hidden"
-              } absolute top-[45vh] left-[4vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr42.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr42.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv42Visibility}
             ></div>
             {isDiv42Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3841,15 +3879,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr43.length >= 1 ? "visible" : "hidden"
-              } absolute top-[45vh] left-[10.5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr43.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr43.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv43Visibility}
             ></div>
             {isDiv43Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3908,15 +3946,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr44.length >= 1 ? "visible" : "hidden"
-              } absolute top-[45vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr44.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr44.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv44Visibility}
             ></div>
             {isDiv44Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -3975,15 +4013,15 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr45.length >= 1 ? "visible" : "hidden"
-              } absolute top-[45vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr45.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr45.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
               onClick={toggleDiv45Visibility}
             ></div>
             {isDiv45Visible && (
-              <div className="absolute left-[50vw] top-[3vh] w-[46vw] h-[80vh] overflow-y-auto ">
+              <div className="absolute left-[50vw] top-[-20vh] w-[46vw] h-[80vh] overflow-y-auto ">
                 <table className="min-w-full bg-[#27211c] text-white rounded-2xl shadow-md">
                   <thead>
                     <tr>
@@ -4045,7 +4083,7 @@ const Home = ({ searchValue }) => {
         {/* Zone 5 */}
         <div className="absolute top-[64vh] left-[1vw]">
           <div
-            className="w-[350px] h-[250px] md:w-[220px] md:h-[140px] bg-cover"
+            className="w-[350px] h-[250px] bg-cover"
             style={{ backgroundImage: `url(${img_5})` }}
           >
             {/* {Array.from({ length: 3 }, (_, rowIndex) => (
@@ -4076,10 +4114,10 @@ const Home = ({ searchValue }) => {
                     <div
                       key={index}
                       className={`product-pair w-[20px] h-[20px] md:w-[15px] md:h-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].product_name === searchValue ||
-                        pair[1].product_name === searchValue ||
-                        pair[2].product_name === searchValue ||
-                        pair[3].product_name === searchValue
+                        pair[0].MACH_DESC === searchValue ||
+                        pair[1].MACH_DESC === searchValue ||
+                        pair[2].MACH_DESC === searchValue ||
+                        pair[3].MACH_DESC === searchValue
                           ? "bg-green-500"
                           : "bg-[#373535]"
                       }`}
@@ -4090,7 +4128,7 @@ const Home = ({ searchValue }) => {
                         <div>
                           <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].product_name}
+                              Product: {pair[0].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[0].quantity}
@@ -4101,7 +4139,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].product_name}
+                              Product: {pair[1].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[1].quantity}
@@ -4112,7 +4150,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].product_name}
+                              Product: {pair[2].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[2].quantity}
@@ -4123,7 +4161,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].product_name}
+                              Product: {pair[3].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[3].quantity}
@@ -4141,8 +4179,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr46.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr46.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr46.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4208,8 +4246,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr47.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr47.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr47.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4275,8 +4313,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr48.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[8vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr48.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[8vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr48.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4342,8 +4380,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr49.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr49.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr49.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4409,8 +4447,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr50.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr50.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr50.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4476,8 +4514,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr51.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr51.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr51.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4543,8 +4581,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr52.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr52.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr52.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4610,8 +4648,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr53.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[21vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr53.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[21vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr53.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4677,8 +4715,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr54.length >= 1 ? "visible" : "hidden"
-              } absolute top-[12.5vh] left-[23vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr54.some((product) => product.product_name === searchValue)
+              } absolute top-[12.5vh] left-[23vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr54.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4744,8 +4782,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr55.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr55.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr55.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4811,8 +4849,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr56.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr56.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr56.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4878,8 +4916,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr57.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[8vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr57.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[8vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr57.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4945,8 +4983,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr58.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr58.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr58.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5012,8 +5050,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr59.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr59.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr59.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5079,8 +5117,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr60.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr60.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr60.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5146,8 +5184,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr61.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr61.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr61.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5213,8 +5251,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr62.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[21vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr62.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[21vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr62.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5280,8 +5318,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr63.length >= 1 ? "visible" : "hidden"
-              } absolute top-[17.5vh] left-[23vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr63.some((product) => product.product_name === searchValue)
+              } absolute top-[17.5vh] left-[23vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr63.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5347,8 +5385,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr64.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr64.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr64.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5414,8 +5452,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr65.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[9vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr65.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[9vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr65.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5481,8 +5519,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr66.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[11vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr66.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[11vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr66.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5548,8 +5586,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr67.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[15vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr67.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr67.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5615,8 +5653,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr68.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[17vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr68.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr68.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5682,8 +5720,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr69.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[20vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr69.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[20vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr69.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5749,8 +5787,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr70.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[22vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr70.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[22vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr70.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5816,8 +5854,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr71.length >= 1 ? "visible" : "hidden"
-              } absolute top-[22vh] left-[24vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr71.some((product) => product.product_name === searchValue)
+              } absolute top-[22vh] left-[24vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr71.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5884,12 +5922,12 @@ const Home = ({ searchValue }) => {
         </div>
 
         {/* Zone 1 */}
-        <div className="absolute top-[11vh] left-[30vw]">
+        <div className="absolute top-[34vh] left-[30vw]">
           <div
-            className="md:mt-[42vh] mt-[23vh] w-[225px] h-[225px] md:w-[140px] md:h-[170px] bg-cover"
+            className="w-[225px] h-[225px] bg-cover"
             style={{ backgroundImage: `url(${img_1})` }}
           >
-            {Array.from({ length: 3 }, (_, rowIndex) => (
+            {/* {Array.from({ length: 3 }, (_, rowIndex) => (
               <div
                 key={rowIndex}
                 // style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
@@ -5924,10 +5962,10 @@ const Home = ({ searchValue }) => {
                     <div
                       key={index}
                       className={`product-pair w-[20px] h-[20px] md:h-[15px] md:w-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].product_name === searchValue ||
-                        pair[1].product_name === searchValue ||
-                        pair[2].product_name === searchValue ||
-                        pair[3].product_name === searchValue
+                        pair[0].MACH_DESC === searchValue ||
+                        pair[1].MACH_DESC === searchValue ||
+                        pair[2].MACH_DESC === searchValue ||
+                        pair[3].MACH_DESC === searchValue
                           ? "bg-green-500"
                           : "bg-[#373535]"
                       }`}
@@ -5938,7 +5976,7 @@ const Home = ({ searchValue }) => {
                         <div>
                           <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].product_name}
+                              Product: {pair[0].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[0].quantity}
@@ -5949,7 +5987,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].product_name}
+                              Product: {pair[1].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[1].quantity}
@@ -5960,7 +5998,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].product_name}
+                              Product: {pair[2].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[2].quantity}
@@ -5971,7 +6009,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].product_name}
+                              Product: {pair[3].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[3].quantity}
@@ -5985,7 +6023,70 @@ const Home = ({ searchValue }) => {
                     </div>
                   ))}
               </div>
-            ))}
+            ))} */}
+            <div
+              className="absolute top-[15vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv72Visibility}
+            ></div>
+            {isDiv72Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[10vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Gaskets</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[15vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv73Visibility}
+            ></div>
+            {isDiv73Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[10vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Gaskets</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[21vh] left-[11vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv74Visibility}
+            ></div>
+            {isDiv74Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[13vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Welding Electrode</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[21vh] left-[13vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv75Visibility}
+            ></div>
+            {isDiv75Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[10vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Welding Tools</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[26vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv76Visibility}
+            ></div>
+            {isDiv76Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[10vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Hydraulic Plunger</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[26vh] left-[11vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv77Visibility}
+            ></div>
+            {isDiv77Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[13vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Welding Electrode</h2>
+              </div>
+            )}
+            <div
+              className="absolute top-[26vh] left-[13vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer"
+              onClick={toggleDiv78Visibility}
+            ></div>
+            {isDiv78Visible && (
+              <div className="absolute left-[30vw] top-[10vh] bg-[#27211c] text-white w-[10vw] h-[10vh] flex justify-center items-center rounded-md">
+                <h2 className="">Welding Tools</h2>
+              </div>
+            )}
           </div>
         </div>
 
@@ -6024,10 +6125,10 @@ const Home = ({ searchValue }) => {
                     <div
                       key={index}
                       className={`product-pair w-[20px] h-[20px] md:h-[15px] md:w-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].product_name === searchValue ||
-                        pair[1].product_name === searchValue ||
-                        pair[2].product_name === searchValue ||
-                        pair[3].product_name === searchValue
+                        pair[0].MACH_DESC === searchValue ||
+                        pair[1].MACH_DESC === searchValue ||
+                        pair[2].MACH_DESC === searchValue ||
+                        pair[3].MACH_DESC === searchValue
                           ? "bg-green-500"
                           : "bg-[#373535]"
                       }`}
@@ -6038,7 +6139,7 @@ const Home = ({ searchValue }) => {
                         <div>
                           <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].product_name}
+                              Product: {pair[0].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[0].quantity}
@@ -6049,7 +6150,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].product_name}
+                              Product: {pair[1].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[1].quantity}
@@ -6060,7 +6161,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].product_name}
+                              Product: {pair[2].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[2].quantity}
@@ -6071,7 +6172,7 @@ const Home = ({ searchValue }) => {
                           </div>
                           <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
                             <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].product_name}
+                              Product: {pair[3].MACH_DESC}
                             </h2>
                             <p className="md:text-[10px]">
                               Quantity: {pair[3].quantity}
@@ -6089,11 +6190,11 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr1.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr1.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr1.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
-              }`}
+              }}`}
               onClick={toggleDiv1Visibility}
             ></div>
             {isDiv1Visible && (
@@ -6157,8 +6258,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr2.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr2.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr2.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6225,8 +6326,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr3.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[7vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr3.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr3.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6292,8 +6393,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr4.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[10vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr4.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr4.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6360,8 +6461,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr5.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr5.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr5.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6428,8 +6529,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr6.length >= 1 ? "visible" : "hidden"
-              } absolute top-[15vh] left-[14vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr6.some((product) => product.product_name === searchValue)
+              } absolute top-[15vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr6.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6495,8 +6596,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr7.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[3vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr7.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr7.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6563,8 +6664,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr8.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr8.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr8.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6631,8 +6732,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr9.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[7vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr9.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr9.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6698,8 +6799,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr10.length >= 1 ? "visible" : "hidden"
-              } absolute top-[21vh] left-[12vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr10.some((product) => product.product_name === searchValue)
+              } absolute top-[21vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr10.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6765,8 +6866,8 @@ const Home = ({ searchValue }) => {
             <div
               className={`${
                 arr11.length >= 1 ? "visible" : "hidden"
-              } absolute top-[26vh] left-[5vw] w-[20px] h-[20px] bg-[#373535] rounded-lg cursor-pointer ${
-                arr11.some((product) => product.product_name === searchValue)
+              } absolute top-[26vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
+                arr11.some((product) => product.MACH_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}

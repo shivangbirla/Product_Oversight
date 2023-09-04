@@ -50,6 +50,15 @@ const Navbar = ({ setSearchValue }) => {
     fetchData();
   }, []);
 
+  const arr = [];
+  mappedProducts.forEach((product) => {
+    if (Array.isArray(product.RFID)) {
+      product.RFID.forEach((rfidItem) => {
+        arr.push({ ...rfidItem });
+      });
+    }
+  });
+
   return (
     <>
       <header
@@ -84,10 +93,10 @@ const Navbar = ({ setSearchValue }) => {
               />
             </label>
             <div className="flex flex-col opacity-100 z-[200] blur-effect-theme rounded-2xl mt-2 mb-1.5 w-[308px]">
-              {mappedProducts
+              {arr
                 .filter((item) => {
                   const searchTerm = value.toLowerCase();
-                  const fullName = item.product_name.toLowerCase();
+                  const fullName = item.MACH_DESC.toLowerCase();
                   return (
                     searchTerm &&
                     fullName.startsWith(searchTerm) &&
@@ -95,13 +104,13 @@ const Navbar = ({ setSearchValue }) => {
                   );
                 })
                 .slice(0, 10)
-                .map((item) => (
+                .map((item, i) => (
                   <div
-                    onClick={() => onSearch(item.product_name)}
+                    onClick={() => onSearch(item.MACH_DESC)}
                     className="cursor-pointer my-1.5 ml-3 mr-3 flex flex-row items-center gap-3"
-                    key={item.product_id}
+                    key={i}
                   >
-                    <h2>{item.product_name}</h2>
+                    <h2>{item.MACH_DESC}</h2>
                     <button className="rounded-2xl active:scale-90 transition-all duration-100 ease-in-out shadow-md bg-white text-black py-1 px-2 text-[16px] md:px-1 md:py-0.5">
                       <BiSearch />
                     </button>
