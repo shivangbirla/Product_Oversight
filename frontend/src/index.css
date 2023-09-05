@@ -47,4 +47,9 @@
   ::-webkit-scrollbar-thumb:active {
     background: rgba(0, 0, 0, 0.8);
   }
+
+  /* button */
+  .button-theme {
+    @apply active:scale-90 transition-all duration-100 ease-in-out shadow-md;
+  }
 }

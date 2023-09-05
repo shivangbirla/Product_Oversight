@@ -75,7 +75,7 @@ const Navbar = ({ setSearchValue }) => {
             <img src={img_6} alt="logo" class="object-contain h-full w-full" />
           </div>
           <div
-            className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer"
+            className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer button-theme"
             onClick={() => window.location.reload()}
           >
             <GrRefresh />
@@ -116,7 +116,7 @@ const Navbar = ({ setSearchValue }) => {
                     key={i}
                   >
                     <h2>{item.MACH_DESC}</h2>
-                    <button className="rounded-2xl active:scale-90 transition-all duration-100 ease-in-out shadow-md bg-white text-black py-1 px-2 text-[16px] md:px-1 md:py-0.5">
+                    <button className="rounded-2xl active:scale-90 transition-all duration-100 ease-in-out shadow-md bg-white text-black py-1 px-2 text-[16px] md:px-1 md:py-0.5 button-theme">
                       <BiSearch />
                     </button>
                   </div>
@@ -124,7 +124,7 @@ const Navbar = ({ setSearchValue }) => {
             </div>
           </div>
           <div
-            className="flex justify-center items-center bg-white h-[36px] w-[90px] rounded-md cursor-pointer"
+            className="flex justify-center items-center bg-white h-[36px] w-[90px] rounded-md cursor-pointer button-theme"
             onClick={() => window.location.reload()}
           >
             <p className="h-[35px] w-[55px] font-semibold mt-3">Table</p>
