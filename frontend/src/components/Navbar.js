@@ -4,6 +4,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { products } from "../data/data";
 import { BiSearch } from "react-icons/bi";
 import { GrRefresh } from "react-icons/gr";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import img_6 from "../assets/img_6.jpg";
 
 const Navbar = ({ setSearchValue }) => {
   const [value, setValue] = useState("");
@@ -69,6 +71,9 @@ const Navbar = ({ setSearchValue }) => {
         }
       >
         <nav className="flex items-center justify-around page-container">
+          <div class="max-w-20 max-h-30 rounded-lg overflow-hidden">
+            <img src={img_6} alt="logo" class="object-contain h-full w-full" />
+          </div>
           <div
             className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer"
             onClick={() => window.location.reload()}
@@ -117,6 +122,13 @@ const Navbar = ({ setSearchValue }) => {
                   </div>
                 ))}
             </div>
+          </div>
+          <div
+            className="flex justify-center items-center bg-white h-[36px] w-[90px] rounded-md cursor-pointer"
+            onClick={() => window.location.reload()}
+          >
+            <p className="h-[35px] w-[55px] font-semibold mt-3">Table</p>
+            <AiOutlineCloseCircle className="h-[35px] w-[20px]" />
           </div>
         </nav>
       </header>
