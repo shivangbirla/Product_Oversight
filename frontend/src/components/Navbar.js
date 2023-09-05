@@ -71,7 +71,7 @@ const Navbar = ({ setSearchValue }) => {
         }
       >
         <nav className="flex items-center justify-around page-container">
-          <div class="max-w-20 max-h-30 rounded-lg overflow-hidden">
+          <div class="absolute left-[2vw] max-w-30 max-h-35 rounded-lg overflow-hidden">
             <img src={img_6} alt="logo" class="object-contain h-full w-full" />
           </div>
           <div
@@ -81,7 +81,7 @@ const Navbar = ({ setSearchValue }) => {
             <GrRefresh />
           </div>
           <div className="w-[360px] flex flex-col items-center justify-center xsm:w-[200px]">
-            <label className="flex flex-row mt-2">
+            <label className="flex flex-row mt-3">
               <AiOutlineSearch className="bg-[#f5f5f5] h-[40px] w-[27px] rounded-tl-2xl rounded-bl-2xl cursor-pointer" />
               <input
                 type="text"
