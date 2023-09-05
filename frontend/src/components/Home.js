@@ -1545,7 +1545,7 @@ const Home = ({ searchValue }) => {
 
   // const value = "Banana";
 
-  // const backgroundColor = arr0.some((product) => product.MACH_DESC === value)
+  // const backgroundColor = arr0.some((product) => product.MATERIAL_DESC === value)
   //   ? "bg-green-500"
   //   : "bg-[#373535]";
 
@@ -1658,7 +1658,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr12.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr12.some((product) => product.MACH_DESC === searchValue)
+                arr12.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -1725,7 +1729,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr13.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr13.some((product) => product.MACH_DESC === searchValue)
+                arr13.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -1792,7 +1800,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr14.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr14.some((product) => product.MACH_DESC === searchValue)
+                arr14.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -1859,7 +1871,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr15.length >= 1 ? "visible" : "hidden"
               } absolute top-[11.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr15.some((product) => product.MACH_DESC === searchValue)
+                arr15.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -1926,7 +1942,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr16.length >= 1 ? "visible" : "hidden"
               } absolute top-[11.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr16.some((product) => product.MACH_DESC === searchValue)
+                arr16.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -1993,7 +2013,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr17.length >= 1 ? "visible" : "hidden"
               } absolute top-[11.5vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr17.some((product) => product.MACH_DESC === searchValue)
+                arr17.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2060,7 +2084,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr18.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr18.some((product) => product.MACH_DESC === searchValue)
+                arr18.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2127,7 +2155,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr19.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr19.some((product) => product.MACH_DESC === searchValue)
+                arr19.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2194,7 +2226,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr20.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr20.some((product) => product.MACH_DESC === searchValue)
+                arr20.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2261,7 +2297,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr21.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr21.some((product) => product.MACH_DESC === searchValue)
+                arr21.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2328,7 +2368,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr22.length >= 1 ? "visible" : "hidden"
               } absolute top-[18vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr22.some((product) => product.MACH_DESC === searchValue)
+                arr22.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2395,7 +2439,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr23.length >= 1 ? "visible" : "hidden"
               } absolute top-[18vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr23.some((product) => product.MACH_DESC === searchValue)
+                arr23.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2462,7 +2510,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr24.length >= 1 ? "visible" : "hidden"
               } absolute top-[18vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr24.some((product) => product.MACH_DESC === searchValue)
+                arr24.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2529,7 +2581,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr25.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr25.some((product) => product.MACH_DESC === searchValue)
+                arr25.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2596,7 +2652,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr26.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr26.some((product) => product.MACH_DESC === searchValue)
+                arr26.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2663,7 +2723,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr27.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr27.some((product) => product.MACH_DESC === searchValue)
+                arr27.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2730,7 +2794,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr28.length >= 1 ? "visible" : "hidden"
               } absolute top-[26vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr28.some((product) => product.MACH_DESC === searchValue)
+                arr28.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2797,7 +2865,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr29.length >= 1 ? "visible" : "hidden"
               } absolute top-[26vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr29.some((product) => product.MACH_DESC === searchValue)
+                arr29.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -2963,7 +3035,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 newArray.length >= 1 ? "visible" : "hidden"
               } absolute top-[40.5vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                newArray.some((product) => product.MACH_DESC === searchValue)
+                newArray.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3025,7 +3101,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr30.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr30.some((product) => product.MACH_DESC === searchValue)
+                arr30.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3092,7 +3172,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr31.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[5.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr31.some((product) => product.MACH_DESC === searchValue)
+                arr31.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3159,7 +3243,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr32.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[8.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr32.some((product) => product.MACH_DESC === searchValue)
+                arr32.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3226,7 +3314,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr33.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr33.some((product) => product.MACH_DESC === searchValue)
+                arr33.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3293,7 +3385,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr34.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[12.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr34.some((product) => product.MACH_DESC === searchValue)
+                arr34.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3360,7 +3456,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr35.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr35.some((product) => product.MACH_DESC === searchValue)
+                arr35.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3427,7 +3527,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr36.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr36.some((product) => product.MACH_DESC === searchValue)
+                arr36.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3494,7 +3598,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr37.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[22vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr37.some((product) => product.MACH_DESC === searchValue)
+                arr37.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3561,7 +3669,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr38.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr38.some((product) => product.MACH_DESC === searchValue)
+                arr38.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3628,7 +3740,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr39.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr39.some((product) => product.MACH_DESC === searchValue)
+                arr39.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3695,7 +3811,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr40.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr40.some((product) => product.MACH_DESC === searchValue)
+                arr40.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3762,7 +3882,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr41.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr41.some((product) => product.MACH_DESC === searchValue)
+                arr41.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3829,7 +3953,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr42.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[4vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr42.some((product) => product.MACH_DESC === searchValue)
+                arr42.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3896,7 +4024,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr43.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[10.5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr43.some((product) => product.MACH_DESC === searchValue)
+                arr43.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -3963,7 +4095,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr44.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr44.some((product) => product.MACH_DESC === searchValue)
+                arr44.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4030,7 +4166,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr45.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr45.some((product) => product.MACH_DESC === searchValue)
+                arr45.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4196,7 +4336,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr46.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr46.some((product) => product.MACH_DESC === searchValue)
+                arr46.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4263,7 +4407,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr47.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr47.some((product) => product.MACH_DESC === searchValue)
+                arr47.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4330,7 +4478,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr48.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[8vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr48.some((product) => product.MACH_DESC === searchValue)
+                arr48.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4397,7 +4549,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr49.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr49.some((product) => product.MACH_DESC === searchValue)
+                arr49.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4464,7 +4620,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr50.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr50.some((product) => product.MACH_DESC === searchValue)
+                arr50.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4531,7 +4691,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr51.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr51.some((product) => product.MACH_DESC === searchValue)
+                arr51.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4598,7 +4762,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr52.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr52.some((product) => product.MACH_DESC === searchValue)
+                arr52.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4665,7 +4833,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr53.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[21vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr53.some((product) => product.MACH_DESC === searchValue)
+                arr53.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4732,7 +4904,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr54.length >= 1 ? "visible" : "hidden"
               } absolute top-[12.5vh] left-[23vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr54.some((product) => product.MACH_DESC === searchValue)
+                arr54.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4799,7 +4975,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr55.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr55.some((product) => product.MACH_DESC === searchValue)
+                arr55.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4866,7 +5046,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr56.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr56.some((product) => product.MACH_DESC === searchValue)
+                arr56.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -4933,7 +5117,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr57.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[8vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr57.some((product) => product.MACH_DESC === searchValue)
+                arr57.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5000,7 +5188,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr58.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr58.some((product) => product.MACH_DESC === searchValue)
+                arr58.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5067,7 +5259,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr59.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr59.some((product) => product.MACH_DESC === searchValue)
+                arr59.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5134,7 +5330,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr60.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr60.some((product) => product.MACH_DESC === searchValue)
+                arr60.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5201,7 +5401,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr61.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr61.some((product) => product.MACH_DESC === searchValue)
+                arr61.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5268,7 +5472,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr62.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[21vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr62.some((product) => product.MACH_DESC === searchValue)
+                arr62.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5335,7 +5543,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr63.length >= 1 ? "visible" : "hidden"
               } absolute top-[17.5vh] left-[23vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr63.some((product) => product.MACH_DESC === searchValue)
+                arr63.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5402,7 +5614,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr64.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr64.some((product) => product.MACH_DESC === searchValue)
+                arr64.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5469,7 +5685,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr65.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[9vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr65.some((product) => product.MACH_DESC === searchValue)
+                arr65.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5536,7 +5756,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr66.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[11vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr66.some((product) => product.MACH_DESC === searchValue)
+                arr66.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5603,7 +5827,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr67.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[15vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr67.some((product) => product.MACH_DESC === searchValue)
+                arr67.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5670,7 +5898,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr68.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[17vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr68.some((product) => product.MACH_DESC === searchValue)
+                arr68.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5737,7 +5969,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr69.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[20vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr69.some((product) => product.MACH_DESC === searchValue)
+                arr69.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5804,7 +6040,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr70.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[22vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr70.some((product) => product.MACH_DESC === searchValue)
+                arr70.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -5871,7 +6111,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr71.length >= 1 ? "visible" : "hidden"
               } absolute top-[22vh] left-[24vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr71.some((product) => product.MACH_DESC === searchValue)
+                arr71.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6207,7 +6451,7 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr1.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr1.some((product) => product.MACH_DESC === searchValue)
+                arr1.some((product) => product.MATERIAL_DESC === searchValue)
                   ? "bg-green-500"
                   : "bg-[#828282]"
               }`}
@@ -6275,7 +6519,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr2.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr2.some((product) => product.MACH_DESC === searchValue)
+                arr2.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6343,7 +6591,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr3.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr3.some((product) => product.MACH_DESC === searchValue)
+                arr3.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6410,7 +6662,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr4.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[10vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr4.some((product) => product.MACH_DESC === searchValue)
+                arr4.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6478,7 +6734,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr5.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr5.some((product) => product.MACH_DESC === searchValue)
+                arr5.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6546,7 +6806,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr6.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[14vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr6.some((product) => product.MACH_DESC === searchValue)
+                arr6.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6613,7 +6877,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr7.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr7.some((product) => product.MACH_DESC === searchValue)
+                arr7.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6681,7 +6949,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr8.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr8.some((product) => product.MACH_DESC === searchValue)
+                arr8.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6749,7 +7021,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr9.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[7vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr9.some((product) => product.MACH_DESC === searchValue)
+                arr9.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6816,7 +7092,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr10.length >= 1 ? "visible" : "hidden"
               } absolute top-[21vh] left-[12vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr10.some((product) => product.MACH_DESC === searchValue)
+                arr10.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}
@@ -6883,7 +7163,11 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr11.length >= 1 ? "visible" : "hidden"
               } absolute top-[26vh] left-[5vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr11.some((product) => product.MACH_DESC === searchValue)
+                arr11.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
                   : "bg-[#373535]"
               }`}

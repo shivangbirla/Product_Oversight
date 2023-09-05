@@ -101,21 +101,26 @@ const Navbar = ({ setSearchValue }) => {
               {arr
                 .filter((item) => {
                   const searchTerm = value.toLowerCase();
-                  const fullName = item.MACH_DESC.toLowerCase();
+                  const fullName = item.MATERIAL_DESC.toLowerCase();
+                  const partNumber = item.PART_NO.toLowerCase();
                   return (
-                    searchTerm &&
-                    fullName.startsWith(searchTerm) &&
-                    fullName !== searchTerm
+                    (searchTerm &&
+                      fullName.startsWith(searchTerm) &&
+                      fullName !== searchTerm) ||
+                    (searchTerm &&
+                      partNumber.startsWith(searchTerm) &&
+                      partNumber !== searchTerm)
                   );
                 })
                 .slice(0, 10)
                 .map((item, i) => (
                   <div
-                    onClick={() => onSearch(item.MACH_DESC)}
+                    onClick={() => onSearch(item.MATERIAL_DESC || item.PART_NO)}
                     className="cursor-pointer my-1.5 ml-3 mr-3 flex flex-row items-center gap-3"
                     key={i}
                   >
-                    <h2>{item.MACH_DESC}</h2>
+                    <h2>{item.MATERIAL_DESC}</h2>
+                    <h2>{item.PART_NO}</h2>
                     <button className="rounded-2xl active:scale-90 transition-all duration-100 ease-in-out shadow-md bg-white text-black py-1 px-2 text-[16px] md:px-1 md:py-0.5 button-theme">
                       <BiSearch />
                     </button>
