@@ -115,7 +115,7 @@ const Navbar = ({ setSearchValue }) => {
                 .slice(0, 10)
                 .map((item, i) => (
                   <div
-                    onClick={() => onSearch(item.MATERIAL_DESC || item.PART_NO)}
+                    onClick={() => onSearch(item.PART_NO || item.MATERIAL_DESC)}
                     className="cursor-pointer my-1.5 ml-3 mr-3 flex flex-row items-center gap-3"
                     key={i}
                   >
