@@ -101,16 +101,21 @@ const Navbar = ({ setSearchValue }) => {
               {arr
                 .filter((item) => {
                   const searchTerm = value.toLowerCase();
-                  const fullName = item.MATERIAL_DESC.toLowerCase();
-                  const partNumber = item.PART_NO.toLowerCase();
-                  return (
-                    (searchTerm &&
-                      fullName.startsWith(searchTerm) &&
-                      fullName !== searchTerm) ||
-                    (searchTerm &&
-                      partNumber.startsWith(searchTerm) &&
-                      partNumber !== searchTerm)
-                  );
+                  try {
+                    const fullName = item.MATERIAL_DESC.toLowerCase();
+                    const partNumber = item.PART_NO.toLowerCase();
+                    return (
+                      (searchTerm &&
+                        fullName.startsWith(searchTerm) &&
+                        fullName !== searchTerm) ||
+                      (searchTerm &&
+                        partNumber.startsWith(searchTerm) &&
+                        partNumber !== searchTerm)
+                    );
+                  } catch (error) {
+                    // Handle the error here, e.g., log it or gracefully handle the absence of MATERIAL_DESC
+                    return false; // Return false to exclude this item from the filtered results
+                  }
                 })
                 .slice(0, 10)
                 .map((item, i) => (
