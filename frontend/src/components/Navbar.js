@@ -52,14 +52,14 @@ const Navbar = ({ setSearchValue }) => {
     fetchData();
   }, []);
 
-  const arr = [];
-  mappedProducts.forEach((product) => {
-    if (Array.isArray(product.RFID)) {
-      product.RFID.forEach((rfidItem) => {
-        arr.push({ ...rfidItem });
-      });
-    }
-  });
+  // const arr = [];
+  // mappedProducts.forEach((product) => {
+  //   if (Array.isArray(product.RFID)) {
+  //     product.RFID.forEach((rfidItem) => {
+  //       arr.push({ ...rfidItem });
+  //     });
+  //   }
+  // });
 
   return (
     <>
@@ -98,7 +98,7 @@ const Navbar = ({ setSearchValue }) => {
               />
             </label>
             <div className="flex flex-col opacity-100 z-[200] blur-effect-theme rounded-2xl mt-2 mb-1.5 w-[308px]">
-              {arr
+              {mappedProducts
                 .filter((item) => {
                   const searchTerm = value.toLowerCase();
                   try {

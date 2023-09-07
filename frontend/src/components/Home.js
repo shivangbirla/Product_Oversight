@@ -112,12 +112,8 @@ const Home = ({ searchValue }) => {
   const arr1 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-01" && product.Box === "B-01") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr1.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-01" && product.Box === "B-01") {
+      arr1.push(product);
     }
   });
 
@@ -130,12 +126,8 @@ const Home = ({ searchValue }) => {
   const arr2 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-02" && product.Box === "B-02") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr2.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-02" && product.Box === "B-02") {
+      arr2.push(product);
     }
   });
 
@@ -149,12 +141,8 @@ const Home = ({ searchValue }) => {
   const arr3 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-03" && product.Box === "B-03") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr3.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-03" && product.Box === "B-03") {
+      arr3.push(product);
     }
   });
   // console.log(arr3);
@@ -168,12 +156,8 @@ const Home = ({ searchValue }) => {
   const arr4 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-04" && product.Box === "B-04") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr4.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-04" && product.Box === "B-04") {
+      arr4.push(product);
     }
   });
 
@@ -188,12 +172,8 @@ const Home = ({ searchValue }) => {
   const arr5 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-05" && product.Box === "B-05") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr5.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-05" && product.Box === "B-05") {
+      arr5.push(product);
     }
   });
 
@@ -208,12 +188,8 @@ const Home = ({ searchValue }) => {
   const arr6 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-1-06" && product.Box === "B-06") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr6.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-1-06" && product.Box === "B-06") {
+      arr6.push(product);
     }
   });
 
@@ -227,12 +203,8 @@ const Home = ({ searchValue }) => {
   const arr7 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-2-07" && product.Box === "B-07") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr7.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-2-07" && product.Box === "B-07") {
+      arr7.push(product);
     }
   });
   // console.log(arr7);
@@ -245,12 +217,8 @@ const Home = ({ searchValue }) => {
   const arr8 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-2-08" && product.Box === "B-08") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr8.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-2-08" && product.Box === "B-08") {
+      arr8.push(product);
     }
   });
   // console.log(arr8);
@@ -263,12 +231,8 @@ const Home = ({ searchValue }) => {
   const arr9 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-2-09" && product.Box === "B-09") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr9.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-2-09" && product.Box === "B-09") {
+      arr9.push(product);
     }
   });
 
@@ -282,12 +246,8 @@ const Home = ({ searchValue }) => {
   const arr10 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-2-10" && product.Box === "B-10") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr10.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-2-10" && product.Box === "B-10") {
+      arr10.push(product);
     }
   });
 
@@ -301,12 +261,8 @@ const Home = ({ searchValue }) => {
   const arr11 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone2-3-11" && product.Box === "B-11") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr11.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone2-3-11" && product.Box === "B-11") {
+      arr11.push(product);
     }
   });
 
@@ -322,12 +278,8 @@ const Home = ({ searchValue }) => {
   const arr12 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-12" && product.Box === "B-12") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr12.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-12" && product.Box === "B-12") {
+      arr12.push(product);
     }
   });
 
@@ -342,12 +294,8 @@ const Home = ({ searchValue }) => {
   const arr13 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-13" && product.Box === "B-13") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr13.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-13" && product.Box === "B-13") {
+      arr13.push(product);
     }
   });
 
@@ -362,12 +310,8 @@ const Home = ({ searchValue }) => {
   const arr14 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-14" && product.Box === "B-14") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr14.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-14" && product.Box === "B-14") {
+      arr14.push(product);
     }
   });
 
@@ -382,12 +326,8 @@ const Home = ({ searchValue }) => {
   const arr15 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-15" && product.Box === "B-15") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr15.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-15" && product.Box === "B-15") {
+      arr15.push(product);
     }
   });
 
@@ -402,12 +342,8 @@ const Home = ({ searchValue }) => {
   const arr16 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-16" && product.Box === "B-16") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr16.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-16" && product.Box === "B-16") {
+      arr16.push(product);
     }
   });
 
@@ -422,12 +358,8 @@ const Home = ({ searchValue }) => {
   const arr17 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-17" && product.Box === "B-17") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr17.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-17" && product.Box === "B-17") {
+      arr17.push(product);
     }
   });
 
@@ -442,12 +374,8 @@ const Home = ({ searchValue }) => {
   const arr18 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-18" && product.Box === "B-18") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr18.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-18" && product.Box === "B-18") {
+      arr18.push(product);
     }
   });
 
@@ -462,12 +390,8 @@ const Home = ({ searchValue }) => {
   const arr19 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-19" && product.Box === "B-19") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr19.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-19" && product.Box === "B-19") {
+      arr19.push(product);
     }
   });
 
@@ -482,12 +406,8 @@ const Home = ({ searchValue }) => {
   const arr20 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-1-20" && product.Box === "B-20") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr20.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-1-20" && product.Box === "B-20") {
+      arr20.push(product);
     }
   });
 
@@ -502,12 +422,8 @@ const Home = ({ searchValue }) => {
   const arr21 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-21" && product.Box === "B-21") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr21.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-21" && product.Box === "B-21") {
+      arr21.push(product);
     }
   });
 
@@ -522,12 +438,8 @@ const Home = ({ searchValue }) => {
   const arr22 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-22" && product.Box === "B-22") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr22.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-22" && product.Box === "B-22") {
+      arr22.push(product);
     }
   });
 
@@ -542,12 +454,8 @@ const Home = ({ searchValue }) => {
   const arr23 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-23" && product.Box === "B-23") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr23.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-23" && product.Box === "B-23") {
+      arr23.push(product);
     }
   });
 
@@ -562,12 +470,8 @@ const Home = ({ searchValue }) => {
   const arr24 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-24" && product.Box === "B-24") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr24.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-24" && product.Box === "B-24") {
+      arr24.push(product);
     }
   });
 
@@ -582,12 +486,8 @@ const Home = ({ searchValue }) => {
   const arr25 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-25" && product.Box === "B-25") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr25.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-25" && product.Box === "B-25") {
+      arr25.push(product);
     }
   });
 
@@ -602,12 +502,8 @@ const Home = ({ searchValue }) => {
   const arr26 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-26" && product.Box === "B-26") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr26.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-26" && product.Box === "B-26") {
+      arr26.push(product);
     }
   });
 
@@ -622,12 +518,8 @@ const Home = ({ searchValue }) => {
   const arr27 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-2-27" && product.Box === "B-27") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr27.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-2-27" && product.Box === "B-27") {
+      arr27.push(product);
     }
   });
 
@@ -642,12 +534,8 @@ const Home = ({ searchValue }) => {
   const arr28 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-3-28" && product.Box === "B-28") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr28.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-3-28" && product.Box === "B-28") {
+      arr28.push(product);
     }
   });
 
@@ -662,12 +550,8 @@ const Home = ({ searchValue }) => {
   const arr29 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone3-3-29" && product.Box === "B-29") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr29.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone3-3-29" && product.Box === "B-29") {
+      arr29.push(product);
     }
   });
 
@@ -684,12 +568,8 @@ const Home = ({ searchValue }) => {
   const arr30 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-30" && product.Box === "B-30") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr30.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-30" && product.Box === "B-30") {
+      arr30.push(product);
     }
   });
 
@@ -704,12 +584,8 @@ const Home = ({ searchValue }) => {
   const arr31 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-31" && product.Box === "B-31") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr31.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-31" && product.Box === "B-31") {
+      arr31.push(product);
     }
   });
 
@@ -724,12 +600,8 @@ const Home = ({ searchValue }) => {
   const arr32 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-32" && product.Box === "B-32") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr32.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-32" && product.Box === "B-32") {
+      arr32.push(product);
     }
   });
 
@@ -744,12 +616,8 @@ const Home = ({ searchValue }) => {
   const arr33 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-33" && product.Box === "B-33") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr33.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-33" && product.Box === "B-33") {
+      arr33.push(product);
     }
   });
 
@@ -764,12 +632,8 @@ const Home = ({ searchValue }) => {
   const arr34 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-34" && product.Box === "B-34") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr34.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-34" && product.Box === "B-34") {
+      arr34.push(product);
     }
   });
 
@@ -784,12 +648,8 @@ const Home = ({ searchValue }) => {
   const arr35 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-35" && product.Box === "B-35") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr35.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-35" && product.Box === "B-35") {
+      arr35.push(product);
     }
   });
 
@@ -804,12 +664,8 @@ const Home = ({ searchValue }) => {
   const arr36 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-36" && product.Box === "B-36") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr36.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-36" && product.Box === "B-36") {
+      arr36.push(product);
     }
   });
 
@@ -824,12 +680,8 @@ const Home = ({ searchValue }) => {
   const arr37 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-1-37" && product.Box === "B-37") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr37.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-1-37" && product.Box === "B-37") {
+      arr37.push(product);
     }
   });
 
@@ -844,12 +696,8 @@ const Home = ({ searchValue }) => {
   const arr38 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-2-38" && product.Box === "B-38") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr38.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-2-38" && product.Box === "B-38") {
+      arr38.push(product);
     }
   });
 
@@ -864,12 +712,8 @@ const Home = ({ searchValue }) => {
   const arr39 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-2-39" && product.Box === "B-39") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr39.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-2-39" && product.Box === "B-39") {
+      arr39.push(product);
     }
   });
 
@@ -884,12 +728,8 @@ const Home = ({ searchValue }) => {
   const arr40 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-2-40" && product.Box === "B-40") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr40.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-2-40" && product.Box === "B-40") {
+      arr40.push(product);
     }
   });
 
@@ -904,12 +744,8 @@ const Home = ({ searchValue }) => {
   const arr41 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-2-41" && product.Box === "B-41") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr41.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-2-41" && product.Box === "B-41") {
+      arr41.push(product);
     }
   });
 
@@ -924,12 +760,8 @@ const Home = ({ searchValue }) => {
   const arr42 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-3-42" && product.Box === "B-42") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr42.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-3-42" && product.Box === "B-42") {
+      arr42.push(product);
     }
   });
 
@@ -944,12 +776,8 @@ const Home = ({ searchValue }) => {
   const arr43 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-3-43" && product.Box === "B-43") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr43.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-3-43" && product.Box === "B-43") {
+      arr43.push(product);
     }
   });
 
@@ -964,12 +792,8 @@ const Home = ({ searchValue }) => {
   const arr44 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-3-44" && product.Box === "B-44") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr44.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-3-44" && product.Box === "B-44") {
+      arr44.push(product);
     }
   });
 
@@ -984,12 +808,8 @@ const Home = ({ searchValue }) => {
   const arr45 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone4-3-45" && product.Box === "B-45") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr45.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone4-3-45" && product.Box === "B-45") {
+      arr45.push(product);
     }
   });
 
@@ -1006,12 +826,8 @@ const Home = ({ searchValue }) => {
   const arr46 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-46" && product.Box === "B-46") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr46.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-46" && product.Box === "B-46") {
+      arr46.push(product);
     }
   });
 
@@ -1025,12 +841,8 @@ const Home = ({ searchValue }) => {
   const arr47 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-47" && product.Box === "B-47") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr47.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-47" && product.Box === "B-47") {
+      arr47.push(product);
     }
   });
 
@@ -1044,12 +856,8 @@ const Home = ({ searchValue }) => {
   const arr48 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-48" && product.Box === "B-48") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr48.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-48" && product.Box === "B-48") {
+      arr48.push(product);
     }
   });
 
@@ -1063,12 +871,8 @@ const Home = ({ searchValue }) => {
   const arr49 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-49" && product.Box === "B-49") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr49.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-49" && product.Box === "B-49") {
+      arr49.push(product);
     }
   });
 
@@ -1082,12 +886,8 @@ const Home = ({ searchValue }) => {
   const arr50 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-50" && product.Box === "B-50") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr50.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-50" && product.Box === "B-50") {
+      arr50.push(product);
     }
   });
 
@@ -1101,12 +901,8 @@ const Home = ({ searchValue }) => {
   const arr51 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-51" && product.Box === "B-51") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr51.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-51" && product.Box === "B-51") {
+      arr51.push(product);
     }
   });
 
@@ -1120,12 +916,8 @@ const Home = ({ searchValue }) => {
   const arr52 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-52" && product.Box === "B-52") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr52.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-52" && product.Box === "B-52") {
+      arr52.push(product);
     }
   });
 
@@ -1139,12 +931,8 @@ const Home = ({ searchValue }) => {
   const arr53 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-53" && product.Box === "B-53") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr53.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-53" && product.Box === "B-53") {
+      arr53.push(product);
     }
   });
 
@@ -1158,12 +946,8 @@ const Home = ({ searchValue }) => {
   const arr54 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-1-54" && product.Box === "B-54") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr54.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-1-54" && product.Box === "B-54") {
+      arr54.push(product);
     }
   });
 
@@ -1177,12 +961,8 @@ const Home = ({ searchValue }) => {
   const arr55 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-55" && product.Box === "B-55") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr55.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-55" && product.Box === "B-55") {
+      arr55.push(product);
     }
   });
 
@@ -1196,12 +976,8 @@ const Home = ({ searchValue }) => {
   const arr56 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-56" && product.Box === "B-56") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr56.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-56" && product.Box === "B-56") {
+      arr56.push(product);
     }
   });
 
@@ -1215,12 +991,8 @@ const Home = ({ searchValue }) => {
   const arr57 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-57" && product.Box === "B-57") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr57.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-57" && product.Box === "B-57") {
+      arr57.push(product);
     }
   });
 
@@ -1234,12 +1006,8 @@ const Home = ({ searchValue }) => {
   const arr58 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-58" && product.Box === "B-58") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr58.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-58" && product.Box === "B-58") {
+      arr58.push(product);
     }
   });
 
@@ -1253,12 +1021,8 @@ const Home = ({ searchValue }) => {
   const arr59 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-59" && product.Box === "B-59") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr59.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-59" && product.Box === "B-59") {
+      arr59.push(product);
     }
   });
 
@@ -1272,12 +1036,8 @@ const Home = ({ searchValue }) => {
   const arr60 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-60" && product.Box === "B-60") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr60.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-60" && product.Box === "B-60") {
+      arr60.push(product);
     }
   });
 
@@ -1291,12 +1051,8 @@ const Home = ({ searchValue }) => {
   const arr61 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-61" && product.Box === "B-61") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr61.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-61" && product.Box === "B-61") {
+      arr61.push(product);
     }
   });
 
@@ -1310,12 +1066,8 @@ const Home = ({ searchValue }) => {
   const arr62 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-62" && product.Box === "B-62") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr62.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-62" && product.Box === "B-62") {
+      arr62.push(product);
     }
   });
 
@@ -1329,12 +1081,8 @@ const Home = ({ searchValue }) => {
   const arr63 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-2-63" && product.Box === "B-63") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr63.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-2-63" && product.Box === "B-63") {
+      arr63.push(product);
     }
   });
 
@@ -1348,12 +1096,8 @@ const Home = ({ searchValue }) => {
   const arr64 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-64" && product.Box === "B-64") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr64.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-64" && product.Box === "B-64") {
+      arr64.push(product);
     }
   });
 
@@ -1367,12 +1111,8 @@ const Home = ({ searchValue }) => {
   const arr65 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-65" && product.Box === "B-65") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr65.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-65" && product.Box === "B-65") {
+      arr65.push(product);
     }
   });
 
@@ -1386,12 +1126,8 @@ const Home = ({ searchValue }) => {
   const arr66 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-66" && product.Box === "B-66") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr66.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-66" && product.Box === "B-66") {
+      arr66.push(product);
     }
   });
 
@@ -1405,12 +1141,8 @@ const Home = ({ searchValue }) => {
   const arr67 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-67" && product.Box === "B-67") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr67.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-67" && product.Box === "B-67") {
+      arr67.push(product);
     }
   });
 
@@ -1424,12 +1156,8 @@ const Home = ({ searchValue }) => {
   const arr68 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-68" && product.Box === "B-68") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr68.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-68" && product.Box === "B-68") {
+      arr68.push(product);
     }
   });
 
@@ -1443,12 +1171,8 @@ const Home = ({ searchValue }) => {
   const arr69 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-69" && product.Box === "B-69") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr69.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-69" && product.Box === "B-69") {
+      arr69.push(product);
     }
   });
 
@@ -1462,12 +1186,8 @@ const Home = ({ searchValue }) => {
   const arr70 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-70" && product.Box === "B-70") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr70.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-70" && product.Box === "B-70") {
+      arr70.push(product);
     }
   });
 
@@ -1481,12 +1201,8 @@ const Home = ({ searchValue }) => {
   const arr71 = [];
 
   mappedProducts.forEach((product) => {
-    if (product.Location === "Zone5-3-71" && product.Box === "B-71") {
-      if (Array.isArray(product.RFID)) {
-        product.RFID.forEach((rfidItem) => {
-          arr71.push({ ...rfidItem });
-        });
-      }
+    if (product.Zone === "Zone5-3-71" && product.Box === "B-71") {
+      arr71.push(product);
     }
   });
 
@@ -6451,9 +6167,13 @@ const Home = ({ searchValue }) => {
               className={`${
                 arr1.length >= 1 ? "visible" : "hidden"
               } absolute top-[15vh] left-[3vw] w-[18px] h-[18px] bg-[#828282] rounded-md cursor-pointer ${
-                arr1.some((product) => product.MATERIAL_DESC === searchValue)
+                arr1.some(
+                  (product) =>
+                    product.MATERIAL_DESC === searchValue ||
+                    product.PART_NO === searchValue
+                )
                   ? "bg-green-500"
-                  : "bg-[#828282]"
+                  : "bg-[#373535]"
               }`}
               onClick={toggleDiv1Visibility}
             ></div>
