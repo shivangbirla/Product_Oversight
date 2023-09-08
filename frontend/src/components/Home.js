@@ -8,13 +8,13 @@ import { products } from "../data/data";
 import { getProducts } from "../api/productRequest";
 
 const Home = ({ searchValue }) => {
-  const [hoveredProduct, setHoveredProduct] = useState(null);
-  const handleProductHover = (product) => {
-    setHoveredProduct(product);
-  };
-  const handleProductLeave = () => {
-    setHoveredProduct(null);
-  };
+  // const [hoveredProduct, setHoveredProduct] = useState(null);
+  // const handleProductHover = (product) => {
+  //   setHoveredProduct(product);
+  // };
+  // const handleProductLeave = () => {
+  //   setHoveredProduct(null);
+  // };
 
   const [mappedProducts, setMappedProducts] = useState([]);
 
@@ -1251,7 +1251,7 @@ const Home = ({ searchValue }) => {
     setIsDiv78Visible(!isDiv78Visible);
   };
 
-  console.log(searchValue);
+  // console.log(searchValue);
 
   // const arr0 = [
   //   { MACH_DESC: "Apple" },
@@ -1278,98 +1278,6 @@ const Home = ({ searchValue }) => {
             className="w-[225px] h-[225px] bg-cover"
             style={{ backgroundImage: `url(${img_3})` }}
           >
-            {/* {Array.from({ length: 3 }, (_, rowIndex) => (
-              <div
-                key={rowIndex}
-                // style={{ top: `${122 + rowIndex * 50}px` }} // Use inline styles for dynamic positioning
-                style={{
-                  top:
-                    window.innerWidth >= 767
-                      ? `${100 + rowIndex * 40}px`
-                      : `${60 + rowIndex * 25}px`,
-                }}
-                className="absolute flex flex-row left-[3vw] md:left-[7vw] md:top-[60px] md:space-x-3"
-              >
-                {mappedProducts
-                  .filter(
-                    (product) =>
-                      product.zone === 3 && product.level === rowIndex + 1
-                  )
-                  .sort((a, b) => a.rack - b.rack)
-                  .reduce((pairs, product, index, array) => {
-                    if (index % 4 === 0) {
-                      pairs.push(array.slice(index, index + 4));
-                    }
-                    return pairs;
-                  }, [])
-                  .slice(0, 4) // Limit to 4 pairs for 4 divs
-                  .map((pair, index) => (
-                    <div
-                      key={index}
-                      className={`product-pair md:h-[15px] md:w-[15px] bg-[#373535] rounded-lg cursor-pointer ${
-                        pair[0].MACH_DESC === searchValue ||
-                        pair[1].MACH_DESC === searchValue ||
-                        pair[2].MACH_DESC === searchValue ||
-                        pair[3].MACH_DESC === searchValue
-                          ? "bg-green-500"
-                          : "bg-[#373535]"
-                      }`}
-                      onMouseEnter={() => setHovered3PairIndex(index)}
-                      onMouseLeave={() => setHovered3PairIndex(null)}
-                    >
-                      {hovered3PairIndex === index && (
-                        <div>
-                          <div className="product-details fixed top-[12vh] left-[3vw] w-[285px] md:top-[10vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
-                            <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[0].MACH_DESC}
-                            </h2>
-                            <p className="md:text-[10px]">
-                              Quantity: {pair[0].quantity}
-                            </p>
-                            <p className="md:text-[10px]">
-                              Description: {pair[0].description}
-                            </p>
-                          </div>
-                          <div className="product-details fixed top-[12vh] left-[26.5vw] w-[285px] md:top-[10vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
-                            <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[1].MACH_DESC}
-                            </h2>
-                            <p className="md:text-[10px]">
-                              Quantity: {pair[1].quantity}
-                            </p>
-                            <p className="md:text-[10px]">
-                              Description: {pair[1].description}
-                            </p>
-                          </div>
-                          <div className="product-details fixed top-[12vh] left-[50.5vw] w-[285px] md:top-[30vh] md:left-[5vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
-                            <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[2].MACH_DESC}
-                            </h2>
-                            <p className="md:text-[10px]">
-                              Quantity: {pair[2].quantity}
-                            </p>
-                            <p className="md:text-[10px]">
-                              Description: {pair[2].description}
-                            </p>
-                          </div>
-                          <div className="product-details fixed top-[12vh] left-[74.5vw] w-[285px] md:top-[30vh] md:left-[50vw] md:w-[160px] bg-[#3B3835] p-4 rounded-md shadow-md">
-                            <h2 className="text-lg md:text-[12px] font-semibold">
-                              Product: {pair[3].MACH_DESC}
-                            </h2>
-                            <p className="md:text-[10px]">
-                              Quantity: {pair[3].quantity}
-                            </p>
-                            <p className="md:text-[10px]">
-                              Description: {pair[3].description}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-              </div>
-            ))} */}
-
             <div
               className={`${
                 arr12.length >= 1 ? "visible" : "hidden"

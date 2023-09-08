@@ -6,6 +6,7 @@ import { BiSearch } from "react-icons/bi";
 import { GrRefresh } from "react-icons/gr";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import img_6 from "../assets/img_6.jpg";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ setSearchValue }) => {
   const [value, setValue] = useState("");
@@ -74,19 +75,30 @@ const Navbar = ({ setSearchValue }) => {
           <div class="absolute left-[2vw] max-w-30 max-h-35 rounded-lg overflow-hidden">
             <img src={img_6} alt="logo" class="object-contain h-full w-full" />
           </div>
-          <div
-            className="flex justify-center items-center bg-white h-[40px] w-[40px] rounded-full cursor-pointer button-theme"
-            onClick={() => window.location.reload()}
-          >
-            <GrRefresh />
+          <div className="flex flex-row space-x-5">
+            <Link to="/">
+              <div className="flex justify-center items-center bg-white h-[30px] w-[80px] rounded-md cursor-pointer button-theme">
+                <p className="font-semibold">Zone 1-5</p>
+              </div>
+            </Link>
+            <Link to="/nextpage">
+              <div className="flex justify-center items-center bg-white h-[30px] w-[80px] rounded-md cursor-pointer button-theme">
+                <p className="font-semibold">Zone 6-7</p>
+              </div>
+            </Link>
+            <Link to="/oboxes">
+              <div className="flex justify-center items-center bg-white h-[30px] w-[80px] rounded-md cursor-pointer button-theme">
+                <p className="font-semibold">O Boxes</p>
+              </div>
+            </Link>
           </div>
           <div className="w-[360px] flex flex-col items-center justify-center xsm:w-[200px]">
             <label className="flex flex-row mt-3">
-              <AiOutlineSearch className="bg-[#f5f5f5] h-[40px] w-[27px] rounded-tl-2xl rounded-bl-2xl cursor-pointer" />
+              <AiOutlineSearch className="bg-[#f5f5f5] h-[35px] w-[27px] rounded-tl-2xl rounded-bl-2xl cursor-pointer" />
               <input
                 type="text"
                 name="name"
-                className="outline-none bg-[#f5f5f5] h-[40px] w-[280px] rounded-tr-2xl rounded-br-2xl cursor-pointer xsm:w-[150px]"
+                className="outline-none bg-[#f5f5f5] h-[35px] w-[280px] rounded-tr-2xl rounded-br-2xl cursor-pointer xsm:w-[150px]"
                 value={value}
                 onChange={onChange}
                 autoComplete="off"
@@ -133,12 +145,20 @@ const Navbar = ({ setSearchValue }) => {
                 ))}
             </div>
           </div>
-          <div
-            className="flex justify-center items-center bg-white h-[36px] w-[90px] rounded-md cursor-pointer button-theme"
-            onClick={() => window.location.reload()}
-          >
-            <p className="h-[35px] w-[55px] font-semibold mt-3">Table</p>
-            <AiOutlineCloseCircle className="h-[35px] w-[20px]" />
+          <div className="flex flex-row space-x-5">
+            <div
+              className="flex justify-center items-center bg-white h-[33px] w-[33px] rounded-full cursor-pointer button-theme"
+              onClick={() => window.location.reload()}
+            >
+              <GrRefresh />
+            </div>
+            <div
+              className="flex justify-center items-center bg-white h-[30px] w-[90px] rounded-md cursor-pointer button-theme space-x-2"
+              onClick={() => window.location.reload()}
+            >
+              <p className="font-semibold">Table</p>
+              <AiOutlineCloseCircle className="h-[30px] w-[20px]" />
+            </div>
           </div>
         </nav>
       </header>
