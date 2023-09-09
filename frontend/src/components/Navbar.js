@@ -68,7 +68,7 @@ const Navbar = ({ setSearchValue }) => {
         className={
           !navState
             ? "absolute top-0 left-0 right-0 pt-2 pb-0 md:pt-1 bg-[#463f3a] opacity-100 z-50 border-b-2 xsm:absolute xsm:left-0 xsm:pb-1 md:pb-2"
-            : "fixed top-0 left-0 right-0 h-[7vh] flex items-center justify-center opacity-100 z-[200] blur-effect-theme xsm:h-[8.2vh]"
+            : "fixed top-0 left-0 right-0 h-[9.8vh] flex items-center justify-center opacity-100 z-[200] blur-effect-theme xsm:h-[8.2vh]"
         }
       >
         <nav className="flex items-center justify-around page-container">

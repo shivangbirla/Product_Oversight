@@ -121,7 +121,7 @@ export const OBoxes = ({ searchValue }) => {
 
   return (
     <>
-      <div className="bg-[#1E1E1E] w-[100vw] h-[100vh]">
+      <div className="bg-[#1E1E1E] w-[100vw] min-h-[100vh] h-auto">
         <div className="pt-[15vh] pl-[5vw] flex flex-row flex-wrap">
           {arr.map((product, i) => (
             <div className="m-[3vh]">
